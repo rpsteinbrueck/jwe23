@@ -4,11 +4,37 @@ article {
     padding: 10px;
 }
 
+.article_2 {
+    background-color: beige;
+    border-color: blueviolet;
+    padding: 10px;
+    color: greenyellow;
+}
+
+#article_id_3 {
+    background-color: seagreen;
+    border-color: black;
+    padding: 10px;
+    color: red;
+}
+
 @media (min-width: 400px) {
     article {
         font-family: sans-serif;
         border: 5px solid orange;
         color: white;
         background-color: black;
+    }
+    .article_2 {
+        background-color: black;
+        border-color: blueviolet;
+        padding: 10px;
+        color: greenyellow;
+    }
+    #article_id_3 {
+        background-color: purple;
+        border-color: red;
+        padding: 10px;
+        color: blue;
     }
 }
