@@ -18,7 +18,10 @@ article {
     color: red;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 768px) {
+    section {
+        display: flex;
+    }
     article {
         font-family: sans-serif;
         border: 5px solid orange;
