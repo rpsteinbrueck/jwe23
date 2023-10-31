@@ -1,0 +1,56 @@
+.wrapper {
+    background-color: #d63939; /* hex */
+    background-color: rgb(214, 57, 57); /* rgb */
+    background-color: yellow; /* keywords */
+}
+
+.default {
+    background-color: #d63939;
+    border: none;
+    padding: 10px;
+}
+
+.outline {
+    background-color: transparent;
+    border: 2px solid #d63939;
+}
+
+#cta {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 25%;
+    box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 1);
+
+    font-size: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+#cta_round {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border: none;
+    background-color: greenyellow;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 1);
+
+    font-size: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+.color-right-shadow {
+    width: 150px;
+    height: 150px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-right: 10px solid rgb(18, 185, 138);
+    box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 1);
+}

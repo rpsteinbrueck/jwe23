@@ -1,0 +1,14 @@
+article {
+    background-color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+@media (min-width: 400px) {
+    article {
+        font-family: sans-serif;
+        border: 5px solid orange;
+        color: white;
+        background-color: black;
+    }
+}

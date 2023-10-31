@@ -1,0 +1,42 @@
+.roter-text {
+    color: red;
+}
+
+.seagreen-hintergrund {
+    background-color: lightseagreen;
+}
+
+#headline1 {
+    text-decoration: line-through;
+}
+
+#headline2 {
+    letter-spacing: 0.5em;
+}
+
+body {
+    background-color: gray;
+    margin: 50px; /*overwriting default user agent settings in browser which is 8px */
+}
+
+/* normal html tag lowest prio */
+li {
+    padding: 10px;
+    border-left: 5px solid green;
+}
+
+/* class has higher prio than normal html tag */
+.list-element {
+    border-left: 3px solid blue;
+}
+
+/* has the highest priority */
+#list-element1 {
+    border-left: 50px solid deeppink;
+}
+
+@media (min-width: 400px) {
+    body {
+        background-color: orange;
+    }
+}
