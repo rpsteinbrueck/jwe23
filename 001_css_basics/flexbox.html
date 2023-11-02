@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flexbox</title>
+
+        <style>
+            html {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .flex-item {
+                background: orange;
+                padding: 20px;
+            }
+
+            .flex-item:first-child {
+                background-color: red;
+            }
+
+            .flex-item:last-child {
+                background-color: aquamarine;
+            }
+
+            .flex-container1 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container2 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container3 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: right;
+                justify-content: center;
+            }
+
+            .flex-container4 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: right;
+                justify-content: center;
+            }
+            .flex-container5 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container6 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container7 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: right;
+                justify-content: center;
+            }
+
+            .flex-container8 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: right;
+                justify-content: center;
+            }
+            .flex-container9 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container10 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container11 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: right;
+                justify-content: center;
+            }
+
+            .flex-container12 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: right;
+                justify-content: center;
+            }
+            .flex-container13 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container14 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-container15 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: column;
+
+                align-items: right;
+                justify-content: center;
+            }
+
+            .flex-container16 {
+                display: flex;
+                background-color: lightpink;
+                padding: 10px;
+
+                flex-flow: row;
+
+                align-items: right;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Flexbox examples</h1>
+                <p>Here are flexbox examples</p>
+            </header>
+
+            <main>
+                <h1>Flexbox1</h1>
+                <div class="flex-container1">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox2</h1>
+                <div class="flex-container2">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox3</h1>
+                <div class="flex-container3">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox4</h1>
+                <div class="flex-container4">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox5</h1>
+                <div class="flex-container5">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox6</h1>
+                <div class="flex-container6">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox7</h1>
+                <div class="flex-container7">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox8</h1>
+                <div class="flex-container8">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox9</h1>
+                <div class="flex-container9">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox10</h1>
+                <div class="flex-container10">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox11</h1>
+                <div class="flex-container11">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox12</h1>
+                <div class="flex-container12">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox13</h1>
+                <div class="flex-container13">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox14</h1>
+                <div class="flex-container14">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox15</h1>
+                <div class="flex-container15">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <h1>Flexbox16</h1>
+                <div class="flex-container16">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
