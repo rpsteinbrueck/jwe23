@@ -1,0 +1,55 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors: */
+    --grey: #969696;
+    --light-grey: #dddddd;
+    --red: #e74149;
+}
+
+#main_header {
+    background-image: url(static/img/blog-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* 50vh sind 50% der verfügbaren Viewport Höhe*/
+    min-height: 75vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+#main_header > .header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0;
+}
+
+#main_header > .header_container:last-child {
+    flex-flow: column;
+    color: white;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+button.cta {
+    background-color: var(--red);
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+}
+
+.wrapper > footer {
+    background-color: var(--grey);
+}
