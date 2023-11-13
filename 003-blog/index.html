@@ -10,7 +10,7 @@
         <div class="wrapper">
             <header id="main_header">
                 <div class="header_container">
-                    <a href="index.html">
+                    <a id="logo" href="index.html">
                         <img
                             src="static/img/Logo-inverted-Stocard-logo-inverted.svg"
                             alt=""
@@ -22,7 +22,7 @@
                         </a>
                     </nav>
                 </div>
-                <div class="header_container">
+                <div class="header_container" id="background">
                     <h1>Blog of best UX-Design for human kind</h1>
                     <button class="cta">Entdecke die neuen Designs</button>
                 </div>
@@ -40,7 +40,12 @@
                     <article>
                         <h3>Design No. 1</h3>
                         <img src="static/img/design1.png" alt="" />
-                        <p></p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut
+                            labore et dolore magna aliquyam erat, sed diam
+                            voluptua.
+                        </p>
                         <a href="">Dieses Design genauer betrachten</a>
                     </article>
                     <article>
@@ -80,12 +85,14 @@
             </main>
             <footer>
                 <div class="footer-index">
-                    <ul>
+                    <ul class="left">
                         <li><a href="kontakt.html">Kontakt</a></li>
                         <li><a href="impressum.html">Impressum</a></li>
                         <li><a href="datenshutz.html">Datenschutz</a></li>
                         <li><a href="agb.html">AGB</a></li>
                         <li><a href="presse.html">Presse</a></li>
+                    </ul>
+                    <ul class="right">
                         <li><a href="kontakt.html">Kontakt</a></li>
                         <li><a href="impressum.html">Impressum</a></li>
                         <li><a href="datenshutz.html">Datenschutz</a></li>
@@ -93,7 +100,13 @@
                         <li><a href="presse.html">Presse</a></li>
                     </ul>
                 </div>
-                <p>© 2020 by JWE 21. Alle Rechte vorbehalten.</p>
+                <div id="copyright-notice">
+                    <img
+                        src="static/img/Logo-inverted-Stocard-logo-inverted.svg"
+                        alt=""
+                    />
+                    <p>© 2020 by JWE 21. Alle Rechte vorbehalten.</p>
+                </div>
             </footer>
         </div>
     </body>
