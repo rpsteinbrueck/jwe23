@@ -45,6 +45,7 @@ html * {
         flex-flow: column;
         color: white;
         justify-content: space-evenly;
+        align-items: start;
         flex: 1;
         h1 {
             z-index: 1;
