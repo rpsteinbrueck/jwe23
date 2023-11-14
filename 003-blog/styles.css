@@ -6,13 +6,52 @@
 #######################################################################################
 */
 
+/*
+#######################################################################################
+# fonts
+#######################################################################################
+*/
+
+/* lato-black - latin */
+@font-face {
+    font-family: "Lato";
+    src: url("static/fonts/Lato-Regular.ttf") format("ttf");
+}
+
+/* lato-bold - latin */
+@font-face {
+    font-family: "Lato";
+    font-weight: bold;
+    src: url("static/fonts/Lato-Bold.ttf") format("ttf");
+}
+
+/* lato-black - latin */
+@font-face {
+    font-family: "Lato";
+    font-weight: bolder;
+    src: url("static/fonts/Lato-Black.ttf") format("ttf");
+}
+
+/*
+#######################################################################################
+# variables
+#######################################################################################
+*/
+
 /*------- variables -------*/
 :root {
     /* Colors: */
     --grey: #969696;
     --light-grey: #dddddd;
     --red: #e74149;
+    --h-space: 30px;
 }
+
+/*
+#######################################################################################
+# basic css structure
+#######################################################################################
+*/
 
 /*------- html -------*/
 html,
@@ -23,6 +62,10 @@ body {
 
 html * {
     box-sizing: border-box;
+}
+
+body * {
+    font-family: Lato;
 }
 
 /*------- #main_header -------*/
@@ -96,12 +139,11 @@ main {
 /*------- .container -------*/
 .container {
     margin-right: 35px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 /*------- .container > article -------*/
 .container > article {
-    margin-bottom: 50px;
     margin-right: 30px;
     width: 305px;
     height: 481px;
@@ -156,14 +198,18 @@ footer {
             color: var(--grey);
             text-align: center;
             font-size: 10px;
-            margin-top: 100px;
             margin-bottom: 20px;
             margin-top: 50px;
         }
     }
 }
 
-/*-------  viewports greater 768px -------*/
+/*
+#######################################################################################
+# viewports greater 768px
+#######################################################################################
+*/
+
 @media (min-width: 768px) {
     /*------- .header_container:last-child, main and .footer-index -------*/
     .header_container:last-child,
@@ -212,8 +258,18 @@ footer {
     }
 }
 
-/*-------  viewports greater 1200px -------*/
+/*
+#######################################################################################
+# viewports greater 1200px
+#######################################################################################
+*/
+
 @media (min-width: 1200px) {
+    /*------- variables for > 1200px -------*/
+    :root {
+        --margin_left: 481px;
+    }
+
     /*------- .header_container:first-child -------*/
     .header_container:first-child {
         margin-left: 0;
@@ -226,12 +282,12 @@ footer {
         }
 
         nav {
-            margin-right: 501px;
+            margin-right: 200px;
         }
     }
     /*------- .header_container:last-child -------*/
     .header_container:last-child {
-        margin-left: 481px;
+        margin-left: var(--margin_left);
         width: 552px;
         h1 {
             z-index: 1;
@@ -243,18 +299,12 @@ footer {
 
     /*------- main -------*/
     main {
-        margin-left: 481px;
+        margin-left: var(--margin_left);
         z-index: 1;
     }
 
-    /*------- main > h2 -------*/
-    main > h2 {
-        width: 552px;
-        height: 106px;
-    }
-
-    /*-------   main > p -------*/
-    main > p {
+    /*------- main > .introduction -------*/
+    main > .introduction {
         width: 552px;
         height: 106px;
     }
@@ -277,7 +327,7 @@ footer {
     /*------- .footer-index -------*/
     .footer-index {
         margin-top: 35px;
-        margin-left: 481px;
+        margin-left: var(--margin_left);
     }
 
     /*------- footer -------*/
