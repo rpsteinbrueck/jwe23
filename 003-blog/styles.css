@@ -354,6 +354,7 @@ footer {
                 margin-top: 35px;
                 width: 172px;
                 height: 33px;
+                filter: grayscale(1);
             }
 
             p {
