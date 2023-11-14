@@ -175,7 +175,13 @@ footer {
             margin-left: 20px;
             line-height: 40px;
 
+            li {
+                padding-left: 10px;
+            }
+
             li::marker {
+                content: "\2023";
+                font-size: 25px;
                 color: var(--red);
             }
 
