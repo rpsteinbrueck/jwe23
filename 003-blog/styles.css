@@ -146,7 +146,6 @@ main {
 .container > article {
     margin-right: 30px;
     width: 305px;
-    height: 481px;
     h3 {
         color: var(--red);
     }
@@ -243,14 +242,17 @@ footer {
     /*------- .footer -------*/
     footer {
         display: flex;
-        gap: 200px;
+        flex-wrap: wrap;
+        flex-flow: row;
+        justify-content: space-between;
 
         /*------- #copyright-notice -------*/
         #copyright-notice {
             margin-top: 35px;
             display: flex;
             flex-direction: column;
-
+            margin-left: 100px;
+            margin-right: 200px;
             img {
                 margin-top: 50px;
                 width: 172px;
@@ -273,7 +275,7 @@ footer {
 @media (min-width: 1200px) {
     /*------- variables for > 1200px -------*/
     :root {
-        --margin_left: 481px;
+        --margin_left: 400px;
     }
 
     /*------- .header_container:first-child -------*/
@@ -341,8 +343,10 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        flex-flow: row;
         #copyright-notice {
             margin-right: 481px;
+            margin-left: 300px;
             display: flex;
             flex-direction: column;
 
