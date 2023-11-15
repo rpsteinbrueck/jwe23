@@ -152,6 +152,34 @@ main {
 
     a {
         color: var(--red);
+        text-decoration: none;
+        transition: all 0.5s ease;
+    }
+
+    a::after {
+        content: "\2BC8";
+    }
+
+    a:hover::before {
+        content: "";
+        display: block;
+        position: relative;
+        bottom: -1.5em;
+        width: cal(100%-1.25em);
+        height: 1px;
+        background: var(--red);
+    }
+
+    a:active {
+        color: darkred;
+    }
+
+    /*a:visited {
+        color: black;
+    }*/
+
+    a:focus {
+        outline: 1px red;
     }
 }
 
@@ -286,7 +314,7 @@ footer {
         z-index: 1;
 
         #logo {
-            margin-left: 499px;
+            margin-left: var(--margin_left);
         }
 
         nav {
