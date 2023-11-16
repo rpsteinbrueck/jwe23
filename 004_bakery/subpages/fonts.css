@@ -1,0 +1,38 @@
+/*
+#######################################################################################
+#
+#    FILENAME: styles.css
+#
+#######################################################################################
+*/
+
+/*
+#######################################################################################
+# fonts
+#######################################################################################
+*/
+
+/* lato-black - latin */
+@font-face {
+    font-family: "Josefin-sans";
+    src: url("static/fonts/josefin-sans-v20-latin-regular.woff2")
+        format("woff2");
+}
+
+/* lato-bold - latin */
+@font-face {
+    font-family: "Josefin-sans";
+    font-weight: bold;
+    src: url("static/fonts/josefin-sans-v20-latin-300.woff2") format("woff2");
+}
+
+/* lato-black - latin */
+@font-face {
+    font-family: "Josefin-sans";
+    font-weight: bolder;
+    src: url("static/fonts/josefin-sans-v20-latin-700.woff2") format("woff2");
+}
+
+body * {
+    font-family: Josefin-sans;
+}
