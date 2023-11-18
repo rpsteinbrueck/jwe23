@@ -1,3 +1,26 @@
+/*
+    #######################################################################################
+    # variables
+    #######################################################################################
+    */
+
+/*------- variables -------*/
+:root {
+    /* Colors: */
+    --light-brown: #c29067;
+    --dark-grey: #707070;
+    --light-grey: #d0d0d0;
+
+    /*spacing*/
+    --h-space: 30px;
+}
+
+/*
+    #######################################################################################
+    # basic css structure
+    #######################################################################################
+    */
+
 html,
 body {
     margin: 0;
@@ -6,6 +29,10 @@ body {
 
 html * {
     box-sizing: border-box;
+}
+
+body * {
+    font-family: Josefin-sans;
 }
 
 /*
@@ -22,9 +49,11 @@ html * {
     display: flex;
     justify-content: space-between;
     position: fixed;
+    font-weight: 700;
+    color: var(--dark-grey);
 }
 
-.logo > img {
+.logo a img {
     width: 200px;
     height: auto;
     margin-left: 40px;

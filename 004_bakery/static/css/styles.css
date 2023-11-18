@@ -1,43 +1,46 @@
 /*
-#######################################################################################
-#
-#    FILENAME: styles.css
-#
-#######################################################################################
-*/
+    #######################################################################################
+    #
+    #    FILENAME: styles.css
+    #
+    #######################################################################################
+    */
 
 /*
-#######################################################################################
-# fonts
-#######################################################################################
-*/
+    #######################################################################################
+    # fonts
+    #######################################################################################
+    */
 
 /* lato-black - latin */
 @font-face {
     font-family: "Josefin-sans";
-    src: url("static/fonts/josefin-sans-v20-latin-regular.woff2")
-        format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    src: url("../fonts/josefin-sans-v20-latin-regular.woff2");
 }
 
 /* lato-bold - latin */
 @font-face {
     font-family: "Josefin-sans";
-    font-weight: bold;
-    src: url("static/fonts/josefin-sans-v20-latin-300.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    src: url("../fonts/josefin-sans-v20-latin-300.woff2");
 }
 
 /* lato-black - latin */
 @font-face {
     font-family: "Josefin-sans";
-    font-weight: bolder;
-    src: url("static/fonts/josefin-sans-v20-latin-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/josefin-sans-v20-latin-700.woff2");
 }
 
 /*
-#######################################################################################
-# variables
-#######################################################################################
-*/
+    #######################################################################################
+    # variables
+    #######################################################################################
+    */
 
 /*------- variables -------*/
 :root {
@@ -51,10 +54,10 @@
 }
 
 /*
-#######################################################################################
-# basic css structure
-#######################################################################################
-*/
+    #######################################################################################
+    # basic css structure
+    #######################################################################################
+    */
 
 html,
 body {
@@ -71,13 +74,13 @@ body * {
 }
 
 /*
-##############################################
-# header
-##############################################
-*/
+    ##############################################
+    # header
+    ##############################################
+    */
 
 .header_whole {
-    background-image: url(static/img/pexels-klaus-nielsen-6287298_small.jpg);
+    background-image: url("../img/pexels-klaus-nielsen-6287298_small.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 75vh;
@@ -92,9 +95,10 @@ body * {
     display: flex;
     justify-content: space-between;
     position: fixed;
+    font-weight: 700;
 }
 
-.logo > img {
+.logo a img {
     width: 200px;
     height: auto;
     margin-left: 40px;
@@ -120,8 +124,8 @@ body * {
     display: none;
     background-color: white;
     /*position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 2;*/
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 2;*/
 }
 
 .dropdown_content a {
@@ -148,10 +152,10 @@ drpbutton:checked .dropdown_content {
 }
 
 /*
-##############################################
-# main
-##############################################
-*/
+    ##############################################
+    # main
+    ##############################################
+    */
 
 main {
     padding: 35px;
@@ -164,7 +168,7 @@ main {
 .main_whole > h1 {
     font-size: 24px;
     text-align: center;
-    color: var(--light-grey);
+    color: var(--dark-grey);
 }
 
 .flex_container img {
@@ -195,29 +199,34 @@ main img {
     margin-right: auto;
     display: flex;
     flex-flow: column;
+    font-weight: 700;
 }
 
 main p {
-    color: var(--light-grey);
+    color: var(--dark-grey);
     text-align: center;
 }
 
 main .order {
-    color: var(--light-grey);
+    color: var(--light-dark);
     background-color: white;
     border: 1px solid var(--dark-grey);
     padding: 20px;
-    border-color: var(--light-grey);
+    border-color: var(--light-brown);
     text-decoration: none;
     align-items: center;
     margin: auto;
 }
 
 /*
-##############################################
-# footer
-##############################################
-*/
+    ##############################################
+    # footer
+    ##############################################
+    */
+
+footer {
+    font-weight: 100;
+}
 
 footer .flex_footer {
     background-color: var(--light-brown);
@@ -239,7 +248,7 @@ footer .footer_index {
     text-align: right;
     margin-left: auto;
     margin-right: auto;
-    justify-content: flex-start;
+    text-align: center;
 }
 
 .footer_index a {
@@ -256,16 +265,16 @@ footer .copyright p {
 }
 
 /*
-######################################################################################
-# viewports greater 768px
-#######################################################################################
-*/
+    ######################################################################################
+    # viewports greater 768px
+    #######################################################################################
+    */
 @media (min-width: 768px) {
     /*
-##############################################
-# header
-##############################################
-*/
+    ##############################################
+    # header
+    ##############################################
+    */
 
     header .drpbutton {
         display: none;
@@ -284,7 +293,7 @@ footer .copyright p {
     }
 
     .header_whole {
-        background-image: url(static/img/pexels-klaus-nielsen-6287298_large.jpg);
+        background-image: url("../img/pexels-klaus-nielsen-6287298_large.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 75vh;
@@ -299,10 +308,10 @@ footer .copyright p {
         right: 60px;
     }
     /*
-##############################################
-# main
-##############################################
-*/
+    ##############################################
+    # main
+    ##############################################
+    */
     .main_whole > h1 {
         font-size: 36px;
     }
@@ -314,11 +323,19 @@ footer .copyright p {
         flex-wrap: wrap;
     }
 
+    .flex_items {
+        width: 320px;
+    }
+
+    .flex_items img {
+        width: 320px;
+    }
+
     /*
-##############################################
-# footer
-##############################################
-*/
+    ##############################################
+    # footer
+    ##############################################
+    */
 
     .flex_container {
         display: flex;
@@ -338,19 +355,24 @@ footer .copyright p {
         display: inline-flex;
         margin-top: 0;
     }
+
+    footer .footer_index {
+        justify-content: flex-start;
+        text-align: end;
+    }
 }
 
 /*
-######################################################################################
-# viewports greater 1200px
-#######################################################################################
-*/
+    ######################################################################################
+    # viewports greater 1200px
+    #######################################################################################
+    */
 @media (min-width: 1200px) {
     /*
-##############################################
-# header
-##############################################
-*/
+    ##############################################
+    # header
+    ##############################################
+    */
 
     .seal img {
         width: 150px;
@@ -360,10 +382,10 @@ footer .copyright p {
         right: 60px;
     }
     /*
-##############################################
-# main
-##############################################
-*/
+    ##############################################
+    # main
+    ##############################################
+    */
 
     .main_whole > h1 {
         font-size: 48px;
@@ -378,8 +400,8 @@ footer .copyright p {
     }
 
     /*
-##############################################
-# footer
-##############################################
-*/
+    ##############################################
+    # footer
+    ##############################################
+    */
 }
