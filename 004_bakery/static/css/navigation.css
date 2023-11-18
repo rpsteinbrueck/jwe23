@@ -1,5 +1,13 @@
 /*
     #######################################################################################
+    #
+    #    FILENAME: navigation.css
+    #
+    #######################################################################################
+    */
+
+/*
+    #######################################################################################
     # variables
     #######################################################################################
     */
@@ -29,10 +37,6 @@ body {
 
 html * {
     box-sizing: border-box;
-}
-
-body * {
-    font-family: Josefin-sans;
 }
 
 /*
@@ -94,33 +98,14 @@ body * {
 }
 
 /*
-######################################################################################
-# viewports greater 768px
-#######################################################################################
-*/
-@media (min-width: 768px) {
-    header .drpbutton {
-        display: none;
-    }
+    ##############################################
+    # footer
+    ##############################################
+    */
 
-    header .dropdown_content {
-        display: flex;
-        flex-flow: row;
-        text-decoration: none;
-        border: none;
-        margin-left: 40px;
-    }
-
-    header .dropdown_content a {
-        color: var(--dark-grey);
-    }
+footer {
+    font-weight: 100;
 }
-
-/*
-##############################################
-# footer
-##############################################
-*/
 
 footer .flex_footer {
     background-color: var(--light-brown);
@@ -142,7 +127,7 @@ footer .footer_index {
     text-align: right;
     margin-left: auto;
     margin-right: auto;
-    justify-content: flex-start;
+    text-align: center;
 }
 
 .footer_index a {
@@ -156,6 +141,64 @@ footer .copyright p {
     text-align: center;
     margin: 0;
     padding: 25px;
+}
+
+/*
+######################################################################################
+# viewports greater 768px
+#######################################################################################
+*/
+@media (min-width: 768px) {
+    /*
+    ##############################################
+    # header
+    ##############################################
+    */
+    header .drpbutton {
+        display: none;
+    }
+
+    header .dropdown_content {
+        display: flex;
+        flex-flow: row;
+        text-decoration: none;
+        border: none;
+        margin-left: 40px;
+    }
+
+    header .dropdown_content a {
+        color: var(--dark-grey);
+    }
+
+    /*
+    ##############################################
+    # footer
+    ##############################################
+    */
+
+    .flex_container {
+        display: flex;
+    }
+
+    footer .contact_details {
+        color: white;
+        text-align: start;
+        padding-top: 100px;
+        display: inline-flex;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer .contact_details p {
+        display: inline-flex;
+        margin-top: 0;
+    }
+
+    footer .footer_index {
+        justify-content: flex-start;
+        text-align: end;
+    }
 }
 
 /*

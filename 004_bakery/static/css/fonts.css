@@ -1,7 +1,7 @@
 /*
 #######################################################################################
 #
-#    FILENAME: styles.css
+#    FILENAME: fonts.css
 #
 #######################################################################################
 */
@@ -34,4 +34,8 @@
     font-weight: 700;
     font-style: normal;
     src: url("../fonts/josefin-sans-v20-latin-700.woff2");
+}
+
+body * {
+    font-family: Josefin-sans;
 }
