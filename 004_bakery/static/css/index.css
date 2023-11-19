@@ -109,7 +109,7 @@ main img {
     margin-right: auto;
     display: flex;
     flex-flow: column;
-    font-weight: 700;
+    font-weight: 100;
 }
 
 main p {
@@ -119,7 +119,8 @@ main p {
 }
 
 main .order {
-    color: var(--light-dark);
+    font-weight: 700;
+    color: var(--dark-grey);
     background-color: white;
     border: 1px solid var(--dark-grey);
     padding: 20px;
