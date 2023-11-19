@@ -39,7 +39,7 @@
         # viewports greater 768px
         #######################################################################################
         */
-@media (min-width: 120px) {
+@media (min-width: 1200px) {
     .main_whole > h1 {
         font-size: 48px;
     }
