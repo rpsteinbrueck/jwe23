@@ -180,6 +180,8 @@ main .order {
         flex-flow: row;
         gap: 10px;
         flex-wrap: wrap;
+        margin-left: 150px;
+        margin-right: 150px;
     }
 
     .flex_items {
