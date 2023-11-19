@@ -86,6 +86,9 @@ main {
 .flex_container {
     display: flex;
     flex-flow: column;
+    .flex_container {
+        padding: 150px;
+    }
 }
 
 .flex_items {
