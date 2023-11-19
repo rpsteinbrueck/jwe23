@@ -14,10 +14,6 @@
 }
 
 .flex_container {
-    padding: 150px;
-}
-
-.flex_container img {
     display: flex;
     flex-flow: column;
 }
@@ -44,17 +40,21 @@ main img {
     */
 @media (min-width: 768px) {
     .flex_container {
+        padding-right: 150px;
+        padding-left: 150px;
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
-        margin-bottom: 100px;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 50px;
+        justify-content: center;
+        column-gap: 50px;
+        row-gap: 50px;
+        margin-bottom: 80px;
     }
 
     .flex_items {
         width: 320px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .flex_items img {
