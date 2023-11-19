@@ -1,15 +1,97 @@
+/* header background image */
+.header_whole {
+    background-image: url("../img/pexels-maria-orlova-4913487.jpg");
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 75vh;
+    z-index: index 0;
+}
+
+main {
+    padding: 35px;
+}
+
+.main_whole {
+    margin-top: 80px;
+}
+
+.main_whole > h1 {
+    font-size: 24px;
+    text-align: center;
+    color: var(--dark-grey);
+}
+
+.flex_container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.flex_items article {
+    width: 320px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+div .image {
+    width: 256px;
+    height: 256px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.image img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
 /*
     ######################################################################################
     # viewports greater 768px
     #######################################################################################
     */
 @media (min-width: 768px) {
+    .main_whole > h1 {
+        font-size: 36px;
+    }
+
+    div .flex_items {
+        flex-flow: row;
+    }
+
+    .flex_items article {
+        width: 320px;
+    }
+
+    div .image {
+        width: 320px;
+        height: 230px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .image img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        overflow: hidden;
+    }
 }
 
 /*
-        ######################################################################################
-        # viewports greater 768px
-        #######################################################################################
-        */
+    ######################################################################################
+    # viewports greater 768px
+    #######################################################################################
+    */
 @media (min-width: 120px) {
+    .main_whole > h1 {
+        font-size: 48px;
+    }
 }
