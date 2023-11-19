@@ -1,9 +1,36 @@
+.header_whole {
+    min-height: 120px;
+    z-index: index 0;
+}
+
+.main_whole {
+    margin-top: 80px;
+}
+
+.main_whole > h1 {
+    font-size: 24px;
+    text-align: center;
+    color: var(--dark-grey);
+}
+
+.main_whole > p {
+    text-align: center;
+    color: var(--dark-grey);
+}
+
 /*
     ######################################################################################
     # viewports greater 768px
     #######################################################################################
     */
 @media (min-width: 768px) {
+    .main_whole > h1 {
+        font-size: 36px;
+    }
+
+    .main_whole > p {
+        font-size: 16px;
+    }
 }
 
 /*
@@ -12,4 +39,11 @@
         #######################################################################################
         */
 @media (min-width: 120px) {
+    .main_whole > h1 {
+        font-size: 48px;
+    }
+
+    .main_whole > p {
+        font-size: 24px;
+    }
 }

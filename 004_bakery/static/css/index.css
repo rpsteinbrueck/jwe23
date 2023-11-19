@@ -109,7 +109,7 @@ main img {
     margin-right: auto;
     display: flex;
     flex-flow: column;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 main p {
@@ -195,6 +195,14 @@ main .order {
         width: 320px;
     }
 
+    main p {
+        font-size: 16px;
+    }
+
+    main .order {
+        font-size: 16px;
+    }
+
     /*
     ##############################################
     # footer
@@ -229,6 +237,10 @@ main .order {
 
     .main_whole > h1 {
         font-size: 48px;
+    }
+
+    main p {
+        font-size: 24px;
     }
 
     .order_section {
