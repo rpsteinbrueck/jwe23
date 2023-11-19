@@ -51,7 +51,7 @@ html * {
     height: 120px;
     z-index: 10;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: fixed;
     font-weight: 700;
     color: var(--dark-grey);
