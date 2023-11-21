@@ -28,6 +28,7 @@ main {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
+    margin-bottom: 100px;
 }
 
 .flex_items {
@@ -38,7 +39,7 @@ main {
 }
 
 .flex_items article {
-    width: 320px;
+    width: 256px;
     margin-top: 50px;
     text-align: center;
     margin-right: auto;
@@ -60,7 +61,7 @@ main img {
 
 main p {
     color: var(--dark-grey);
-    text-align: center;
+    text-align: start;
 }
 
 /*
@@ -80,7 +81,6 @@ main p {
 
     .flex_items {
         flex-flow: row;
-        gap: 40px;
         align-items: center;
     }
 
@@ -116,7 +116,7 @@ main p {
     }
 
     .flex_container {
-        width: 1200px;
+        width: 900px;
     }
 
     main p {

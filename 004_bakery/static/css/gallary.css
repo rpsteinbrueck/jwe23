@@ -16,6 +16,7 @@
 .flex_container {
     display: flex;
     flex-flow: column;
+    margin-bottom: 100px;
 }
 
 .flex_items {

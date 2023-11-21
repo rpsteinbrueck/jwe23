@@ -20,6 +20,7 @@
     text-align: start;
     color: var(--dark-grey);
     display: none;
+    margin-bottom: 100px;
 }
 
 .flex_container {
@@ -31,7 +32,7 @@
     height: 200px;
 }
 
-.forms {
+.main_whole .forms {
     text-align: start;
     color: var(--dark-grey);
     font-weight: 700;
