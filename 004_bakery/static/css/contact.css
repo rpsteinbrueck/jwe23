@@ -50,17 +50,15 @@
     height: 25px;
 }
 
+.map_section {
+    display: none;
+}
+
 .map_section > h1 {
     font-size: 24px;
     text-align: center;
     color: var(--dark-grey);
-    min-height: 120px;
-}
-
-.map {
-}
-
-.map > img {
+    margin-bottom: 100px;
 }
 
 /*
@@ -111,17 +109,11 @@
     .map_section > h1 {
         font-size: 36px;
     }
-
-    .map {
-    }
-
-    .map > img {
-    }
 }
 
 /*
         ######################################################################################
-        # viewports greater 768px
+        # viewports greater 1200px
         #######################################################################################
         */
 @media (min-width: 1200px) {
@@ -137,13 +129,18 @@
         font-size: 24px;
     }
 
+    .map_section {
+        display: contents;
+    }
+
     .map_section > h1 {
         font-size: 48px;
     }
 
     .map {
-    }
-
-    .map > img {
+        width: 1144px;
+        height: 759px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
