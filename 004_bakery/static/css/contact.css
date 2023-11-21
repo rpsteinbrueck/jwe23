@@ -12,6 +12,7 @@
     font-size: 24px;
     text-align: center;
     color: var(--dark-grey);
+    margin-bottom: 100px;
 }
 
 .main_whole article {
