@@ -29,6 +29,8 @@ main {
     flex-flow: column;
     justify-content: space-evenly;
     margin-bottom: 100px;
+
+    transition: 2s;
 }
 
 .flex_items {

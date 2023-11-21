@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+
+        <style>
+            body {
+                background-color: rgb(218, 218, 218);
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            img {
+                width: 350px;
+                height: 350px;
+            }
+
+            main > section {
+                background-color: white;
+                width: 380px;
+                height: 380px;
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px black;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+            }
+
+            form {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .textfield {
+                width: 200px;
+                height: 50px;
+            }
+
+            .textfield:last-child {
+                margin-top: 50px;
+            }
+
+            input[text] input[password] {
+                border: 1px black;
+                border-radius: 20px;
+            }
+
+            #button {
+                margin-top: 10px;
+            }
+
+            button {
+                background-color: #2196f3;
+                text-decoration: none;
+                border: 1px #2196f3;
+                box-shadow: 30px;
+                width: 100px;
+            }
+
+            #forgot {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div>
+                    <h1>Secret login Area</h1>
+                    <!-- <img src="WordPress_blue_logo.svg.png" id="logo" alt="" /> -->
+                </div>
+            </header>
+            <main>
+                <section>
+                    <!-- action="https://jwe.obinet.at/login.php?key=wifi2023" method="post" -->
+                    <form action="">
+                        <div class="textfield">
+                            Username or email address <br />
+                            <input type="text" name="username" id="username" />
+                        </div>
+
+                        <div class="textfield">
+                            Password <br />
+                            <input
+                                type="password"
+                                name="passowrd"
+                                id="password"
+                            />
+                        </div>
+
+                        <div id="button">
+                            Remember me? <input type="checkbox"
+                            name="remember_me" id=remember_me">
+                            <button type="submit">Login</button>
+                        </div>
+                        <div></div>
+                        <div id="forgot"><a href="#">Forgot Password?</a></div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

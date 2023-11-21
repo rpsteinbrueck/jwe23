@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formulare in HTML</title>
+    </head>
+    <body>
+        <!-- 
+
+    input               -> einzeiliger textfeld
+    textarea            -> mehrzeiliges textfeld
+    checkbox            -> mehrfachauswahl optionsfeld
+    radio               -> einfachauswahl optionsfeld
+    select              -> einfachauswahl oder mehrfachauswahloptionsfeld
+
+
+    submit              -> button abschicken des forms
+    reset               -> alle felder zurücksetzen
+    button              -> unbestimmter button
+
+
+    input types:
+
+            <input type="button">
+            <input type="checkbox">
+            <input type="color">
+            <input type="date">
+            <input type="datetime-local">
+            <input type="email">
+            <input type="file">
+            <input type="hidden">
+            <input type="image">
+            <input type="month">
+            <input type="number">
+            <input type="password">
+            <input type="radio">
+            <input type="range">
+            <input type="reset">
+            <input type="search">
+            <input type="submit">
+            <input type="tel">
+            <input type="text">
+            <input type="time">
+            <input type="url">
+            <input type="week">
+
+-->
+
+        <main>
+            <h1>basic example (does nothing)</h1>
+            <form action="test.html">
+                <input type="text" name="q" id="example" autocomplete="off" />
+                <button>search</button>
+            </form>
+            <hr />
+            <h1>google search example</h1>
+            <form action="https://www.google.com/search?">
+                <input
+                    type="text"
+                    name="q"
+                    id="searchterm"
+                    autocomplete="off"
+                />
+                <button>search</button>
+            </form>
+            <hr />
+            <h1>Login (Post example)</h1>
+            <form action="test.html" method="post">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" />
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" />
+                <button type="submit">submit</button>
+            </form>
+            <hr />
+            <h1>Login (Get example shows password in query)</h1>
+            <form action="test.html" method="get">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" />
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" />
+                <button type="submit">submit</button>
+            </form>
+            <hr />
+        </main>
+    </body>
+</html>
