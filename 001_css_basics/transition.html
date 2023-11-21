@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Transition</title>
+        <style>
+            .moving_box {
+                background-color: greenyellow;
+                width: 300px;
+                height: 300px;
+            }
+
+            .moving_box > article {
+                padding: 100px;
+            }
+
+            @media (min-width: 768px) {
+                .moving_box {
+                    background-color: yellow;
+                    width: 600px;
+                    height: 200px;
+
+                    transition: 2s;
+                }
+
+                .moving_box > article {
+                    padding-right: 150px;
+                    padding-left: 150px;
+                    padding-bottom: 60px;
+                    padding-top: 60px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="moving_box">
+            <article>
+                <h1>try and make me move</h1>
+            </article>
+        </div>
+    </body>
+</html>
