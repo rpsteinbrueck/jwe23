@@ -15,6 +15,7 @@
 }
 
 .main_whole article {
+    margin-top: 50px;
     text-align: start;
     color: var(--dark-grey);
     display: none;
@@ -95,12 +96,6 @@
         margin-bottom: 100px;
     }
 
-    .main_whole article {
-        text-align: start;
-        color: var(--dark-grey);
-        display: inline-flex;
-    }
-
     .forms > input {
         width: 500px;
         height: 40px;
@@ -132,6 +127,10 @@
 
     .main_whole article {
         font-size: 24px;
+
+        text-align: start;
+        color: var(--dark-grey);
+        display: inline-flex;
     }
 
     .map_section {
