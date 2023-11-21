@@ -35,8 +35,9 @@
     font-weight: 700;
 }
 
-.radio {
-    position: relative;
+.checkbox input[type="checkbox"] {
+    border: 0px;
+    width: 35px;
 }
 
 .forms input {
