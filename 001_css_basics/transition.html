@@ -9,15 +9,53 @@
                 background-color: greenyellow;
                 width: 300px;
                 height: 300px;
+                transition: 2s;
             }
 
             .moving_box > article {
                 padding: 100px;
             }
 
-            @media (min-width: 768px) {
+            @media (min-width: 450px) {
                 .moving_box {
                     background-color: yellow;
+                    width: 600px;
+                    height: 200px;
+
+                    transition: 2s;
+                }
+
+                .moving_box > article {
+                    padding-right: 150px;
+                    padding-left: 150px;
+                    padding-bottom: 60px;
+                    padding-top: 60px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .moving_box {
+                    margin-left: 600px;
+                    background-color: seagreen;
+                    width: 300px;
+                    height: 800px;
+
+                    transition: 2s;
+                }
+
+                .moving_box > article {
+                    padding-right: 150px;
+                    padding-left: 150px;
+                    padding-bottom: 60px;
+                    padding-top: 60px;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .moving_box {
+                    margin-left: 600px;
+                    margin-top: 400px;
+                    background-color: crimson;
                     width: 600px;
                     height: 200px;
 
