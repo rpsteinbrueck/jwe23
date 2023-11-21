@@ -35,6 +35,10 @@
     font-weight: 700;
 }
 
+.radio {
+    position: relative;
+}
+
 .forms input {
     border: 2px solid var(--light-brown);
     width: 300px;
