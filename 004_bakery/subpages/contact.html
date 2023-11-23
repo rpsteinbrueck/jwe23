@@ -42,27 +42,91 @@
                 <h1>Bestellen Sie bei uns</h1>
                 <div class="flex_container">
                     <div class="flex_item">
-                        <div class="forms">
-                            <div class="checkbox">
-                                <input type="checkbox" />
+                        <!-- <form
+                            class="forms"
+                            action="https://jwe.obinet.at/bakery_order.php"
+                            method="post"
+                        > -->
+                        <form
+                            class="forms"
+                            action="https://jwe.obinet.at/bakery_order.php"
+                            method="post"
+                        >
+                            <input type="hidden" name="key" value="wifi2023" />
+                            <input
+                                type="hidden"
+                                name="ToMail"
+                                value="rob.st.nam@gmail.com"
+                            />
+                            <div class="radio">
+                                <input type="radio" name="anrede" />
                                 <label>Herr</label>
-                                <input type="checkbox" />
+                                <input type="radio" name="anrede" />
                                 <label>Frau</label>
-                                <input type="checkbox" />
+                                <input type="radio" name="anrede" />
                                 <label>Firma</label>
                             </div>
                             <label>Name</label><br />
-                            <input type="text" /><br />
+                            <input type="text" name="name" id="name" /><br />
                             <label>Emailadresse</label><br />
-                            <input type="text" /><br /><br />
+                            <input
+                                type="email"
+                                name="emailadresse"
+                                id="emailadresse"
+                            /><br /><br />
                             <label>Betreff</label><br />
-                            <input type="text" /><br /><br />
+                            <input
+                                type="text"
+                                name="betreff"
+                                id="betreff"
+                            /><br /><br />
                             <label>Wunsch-Lieferdatum</label><br />
-                            <input type="text" /><br /><br />
+                            <input
+                                type="date"
+                                name="wunsch-Lieferdatum"
+                                id="wunsch-Lieferdatum"
+                            /><br /><br />
                             <label>Nachricht</label><br />
-                            <input type="textarea" id="nachricht" /><br /><br />
+                            <textarea
+                                id="nachricht"
+                                name="nachricht"
+                                rows="10"
+                                cols="30"
+                            ></textarea>
+                            <br /><br />
+                            <div class="checkbox">
+                                <label id="gdpr" for="gdpr"
+                                    >Ja, ich bin mit den
+                                    <a href="data_protection.html"
+                                        >Datenschutzbestimmungen</a
+                                    >
+                                    einverstanden.</label
+                                >
+                                <input type="checkbox" name="einverstanden" />
+                            </div>
+
+                            <br />
+                            <label for="feedback"
+                                >Wie haben Sie von uns erfahren?</label
+                            >
+                            <div class="selection">
+                                <select name="feedback" id="feedback">
+                                    <option value="" disabled selected>
+                                        Bitte wählen Sie eine Option
+                                    </option>
+                                    <option value="Google">Google</option>
+                                    <option value="Friend">
+                                        Durch ein Freund
+                                    </option>
+                                    <option value="Magazine">
+                                        Aus einer Zeitung
+                                    </option>
+                                </select>
+                            </div>
+
+                            <br /><br />
                             <input id="submit" type="submit" value="senden" />
-                        </div>
+                        </form>
                     </div>
                     <article class="flex-item">
                         <p>
@@ -75,7 +139,18 @@
                 <div class="map_section">
                     <h1>Anfahrtsplan</h1>
                     <div class="map">
-                        <img src="../static/img/map.png" alt="" />
+                        <!-- <img src="../static/img/map.png" alt="" /> -->
+
+                        <iframe
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=13.012683391571047%2C47.79802190747422%2C13.06225061416626%2C47.81606523781518&amp;layer=mapnik"
+                            style="border: 1px solid black"
+                        ></iframe
+                        ><br /><small
+                            ><a
+                                href="https://www.openstreetmap.org/#map=16/47.8070/13.0375"
+                                >Größere Karte anzeigen</a
+                            ></small
+                        >
                     </div>
                 </div>
             </div>

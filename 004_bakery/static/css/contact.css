@@ -28,27 +28,49 @@
     justify-content: center;
 }
 
-#nachricht {
-    height: 200px;
-}
-
 .main_whole .forms {
     text-align: start;
     color: var(--dark-grey);
     font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.checkbox input[type="checkbox"] {
+.radio input[type="radio"] {
     border: 0px;
     width: 35px;
 }
 
-.forms input {
+.forms input,
+input[type="checkbox"],
+.selection select {
     border: 2px solid var(--light-brown);
     width: 300px;
-    margin-bottom: 20px;
-    height: 30px;
-    font-size: 16;
+    margin-bottom: 10px;
+
+    font-size: 16px;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-top: 50px;
+    border: 0px;
+    width: 35px;
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+    border: 2px solid var(--light-brown);
+    font-size: 16px;
+}
+
+.checkbox {
+    margin-top: 20px;
+    width: 300px;
+}
+
+#feedback {
+    background-color: white;
 }
 
 #submit {
@@ -98,9 +120,21 @@
         margin-bottom: 100px;
     }
 
-    .forms > input {
+    .forms input,
+    input[type="checkbox"] {
         width: 500px;
         height: 40px;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        width: 500px;
+        height: 400px;
+    }
+
+    .checkbox {
+        margin-top: 20px;
+        width: 600px;
     }
 
     #submit {
@@ -141,6 +175,11 @@
 
     .map_section > h1 {
         font-size: 48px;
+    }
+
+    iframe {
+        width: 1040px;
+        height: 759px;
     }
 
     .map {
