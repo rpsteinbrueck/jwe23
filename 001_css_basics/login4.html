@@ -19,7 +19,7 @@
                 height: 350px;
             }
 
-            main > section {
+            section {
                 background-color: white;
                 width: 380px;
                 height: 380px;
@@ -35,30 +35,23 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .textfield {
+
+            input[type="text"],
+            input[type="password"] {
+                border: 1px 1px black;
+                border-radius: 2px;
+                height: 30px;
                 width: 200px;
-                height: 50px;
-            }
-
-            .textfield:last-child {
-                margin-top: 50px;
-            }
-
-            input[text] input[password] {
-                border: 1px black;
-                border-radius: 20px;
             }
 
             #button {
                 margin-top: 10px;
-            }
-
-            button {
                 background-color: #2196f3;
                 text-decoration: none;
                 border: 1px #2196f3;
                 box-shadow: 30px;
-                width: 100px;
+                width: 150px;
+                height: 30px;
             }
 
             #forgot {
@@ -92,13 +85,16 @@
                             />
                         </div>
 
-                        <div id="button">
+                        <div>
+                            <br />
                             Remember me? <input type="checkbox"
-                            name="remember_me" id=remember_me">
-                            <button type="submit">Login</button>
+                            name="remember_me" id=remember_me"><br />
+                            <button type="submit" id="button">Login</button>
                         </div>
                         <div></div>
-                        <div id="forgot"><a href="#">Forgot Password?</a></div>
+                        <div id="forgot">
+                            <a href="#"><br />Forgot Password?</a>
+                        </div>
                     </form>
                 </section>
             </main>
