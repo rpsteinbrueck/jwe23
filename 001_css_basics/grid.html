@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grid example CSS</title>
+        <style>
+            img {
+                max-width: 100%;
+            }
+            .container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: right;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr; /*50% 25% 25%*/
+                grid-template-rows: 135px 135px;
+            }
+
+            #big-img {
+                grid-column-start: 1;
+                grid-column-end: 1;
+                grid-row-start: 1;
+                grid-row-end: 3;
+            }
+
+            #small-img1 {
+                /* Kürzere Schreibweise 
+                grid-column startpunkt / Endpunkt*/
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+
+            #small-img1 {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+            #tall-img {
+                grid-column: 3 / 5;
+                grid-row: 1 / 3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img
+                src="../004_bakery/static/img/pexels-klaus-nielsen-6287298_small.jpg"
+                id="big-img"
+                alt=""
+                class="item"
+            />
+            <img
+                src="../004_bakery/static/img/pexels-meruyert-gonullu-6152263.jpg"
+                id="small-img1"
+                alt=""
+                class="item"
+            />
+            <img
+                src="../004_bakery/static/img/pexels-pixabay-461060.jpg"
+                id="small-img2"
+                alt=""
+                class="item"
+            />
+            <img
+                src="../007_x_signage/static/img/pexels-josh-hild-2422257.png"
+                id="tall-img"
+                alt=""
+                class="item"
+            />
+        </div>
+    </body>
+</html>
