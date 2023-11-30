@@ -124,6 +124,7 @@ main h2 {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    transition: 2s;
 }
 
 .article_section h2 {
@@ -317,6 +318,7 @@ article {
 
     .article_section {
         flex-flow: row;
+        justify-content: space-between;
     }
 
     .grid_container {
@@ -329,6 +331,7 @@ article {
             "big_img big_img big_img small_img2 tall_img";
         padding-right: 30px;
         padding-left: 30px;
+        transition: 2s;
     }
 
     .footer_flex .inner_wrapper {
