@@ -95,6 +95,8 @@ body {
             background-image: url(../img/);
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: 57% 70%;
+            min-height: 75vh;
         }
 */
 
