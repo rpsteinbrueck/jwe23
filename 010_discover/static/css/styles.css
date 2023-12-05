@@ -146,9 +146,8 @@ body * {
     background-position: 57% 70%;
     min-height: 75vh;
     display: flex;
-    flex-flow: column;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     padding-left: var(--space);
     padding-right: var(--space);
 }
@@ -389,7 +388,7 @@ input {
 
     .hero > h1 {
         font-size: 75px;
-        margin-right: 600px;
+        margin-right: 150px;
     }
 
     /*
@@ -505,6 +504,28 @@ input {
         # header
         ##############################################
     */
+
+    #burger {
+        display: none;
+    }
+
+    .burger_items {
+        display: inline;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .burger_items a {
+        text-decoration: none;
+        color: var(--dark_blue);
+        letter-spacing: 4px;
+        margin-left: 60px;
+    }
+
+    .hero > h1 {
+        margin-right: 350px;
+        font-size: 100px;
+    }
 
     /*
         ##############################################
