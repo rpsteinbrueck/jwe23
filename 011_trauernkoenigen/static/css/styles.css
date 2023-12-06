@@ -187,7 +187,6 @@ main {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-
     padding-bottom: 30px;
 }
 
@@ -256,16 +255,25 @@ main {
 
 .img1 {
     grid-area: img1;
+    background-image: url(../img/pexels-rachel-claire-4577396.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 148px;
     height: 100px;
 }
 .img2 {
     grid-area: img2;
+    background-image: url(../img/pexels-monstera-5709003.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 148px;
     height: 100px;
 }
 .img3 {
     grid-area: img3;
+    background-image: url(../img/pexels-sound-on-3761135.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 152px;
     height: 210px;
 }
@@ -322,9 +330,11 @@ main {
     ##############################################
 */
 
-.footer_whole {
+footer {
     background-color: var(--green);
+}
 
+.footer_whole {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -376,6 +386,7 @@ main {
     background-color: var(--gold);
     display: flex;
     flex-flow: column;
+
     justify-content: center;
     align-items: center;
     height: 75px;
@@ -391,7 +402,7 @@ main {
 
 /*
     ######################################################################################
-    # viewport greater 768px
+    # viewport greater 1024px
     #######################################################################################
 */
 @media (min-width: 1024px) {
@@ -404,6 +415,14 @@ main {
         ##############################################
     */
 
+    #logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero {
+        background-image: url(../img/pexels-josh-hild-2422257.jpg);
+    }
     /*
         ##############################################
         # main
@@ -414,7 +433,18 @@ main {
         margin-top: 30px;
         padding-bottom: 30px;
         flex-flow: row;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .article_container article {
+        width: 450px;
+        height: 450px;
+    }
+
+    .article_container img {
+        width: 445px;
+        height: 231px;
     }
 
     .grid_article {
@@ -440,14 +470,17 @@ main {
     }
 
     .img1 {
+        background-image: url(../img/pexels-rachel-claire-9@2x.jpg);
         width: 566px;
         height: 222px;
     }
     .img2 {
+        background-image: url(../img/pexels-monstera-5709003_tablet_desktop.jpg);
         width: 566px;
         height: 222px;
     }
     .img3 {
+        background-image: url(../img/pexels-sound-on-2.jpg);
         width: 333px;
         height: 463px;
     }
@@ -477,8 +510,16 @@ main {
     }
 
     .footer_item1 {
+        height: 200px;
+        width: 500px;
         flex-flow: row;
         justify-content: center;
+        align-items: start;
+    }
+
+    .end_logo {
+        flex-flow: column;
+        justify-content: start;
         align-items: start;
     }
 }
@@ -498,6 +539,18 @@ main {
         ##############################################
     */
 
+    .hero h1 {
+        font-size: 94px;
+    }
+
+    .hero h2 {
+        font-size: 60px;
+    }
+
+    .hero h3 {
+        font-size: 17px;
+    }
+
     /*
         ##############################################
         # main
@@ -508,6 +561,14 @@ main {
         background-color: var(--green);
         width: 100%;
         height: 100px;
+    }
+
+    .article_container article {
+    }
+
+    .article_container img {
+        width: 454px;
+        height: 231px;
     }
 
     /*
