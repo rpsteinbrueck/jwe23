@@ -80,9 +80,6 @@ body {
     ##############################################
 */
 
-footer {
-}
-
 .nav_bar {
     background-color: var(--green);
     padding-left: var(--space);
@@ -99,6 +96,15 @@ footer {
 }
 
 #burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #logo img {
@@ -169,6 +175,10 @@ footer {
     ##############################################
 */
 
+main {
+    background-color: var(--green);
+}
+
 .article_container {
     background-color: var(--white);
     padding-left: var(--space);
@@ -177,6 +187,8 @@ footer {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+
+    padding-bottom: 30px;
 }
 
 .article_container article {
@@ -219,6 +231,7 @@ footer {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 457px;
 }
 
 .grid_article h2 {
@@ -263,6 +276,8 @@ footer {
     font-weight: 100;
     font-size: 14px;
     align-items: center;
+    height: 75px;
+    width: 315px;
 }
 
 .book_now {
@@ -272,6 +287,8 @@ footer {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+
+    height: 242px;
 }
 
 .book_now h2 {
@@ -326,7 +343,7 @@ footer {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .contact_details p {
@@ -377,7 +394,7 @@ footer {
     # viewport greater 768px
     #######################################################################################
 */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .inner_wrapper {
     }
 
@@ -393,16 +410,82 @@ footer {
         ##############################################
     */
 
+    .article_container {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        flex-flow: row;
+        justify-content: space-evenly;
+    }
+
+    .grid_article {
+        height: 676px;
+    }
+
+    .grid_article h2 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 26px;
+    }
+
+    .grid_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 20px 20px;
+        grid-template-areas:
+            "img3 img3 img2 img2 img2"
+            "img3 img3 img2 img2 img2"
+            "img3 img3 img1 img1 img1"
+            "img3 img3 img1 img1 img1";
+    }
+
+    .img1 {
+        width: 566px;
+        height: 222px;
+    }
+    .img2 {
+        width: 566px;
+        height: 222px;
+    }
+    .img3 {
+        width: 333px;
+        height: 463px;
+    }
+
+    .grid_article p {
+        margin-top: 50px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .book_now p {
+        widht: 300px;
+    }
     /*
         ##############################################
         # footer
         ##############################################
     */
+
+    .footer_whole {
+        flex-flow: row;
+        justify-content: space-between;
+        padding-left: var(--space);
+        padding-right: var(--space);
+        padding-top: var(--space);
+        padding-bottom: var(--space);
+    }
+
+    .footer_item1 {
+        flex-flow: row;
+        justify-content: center;
+        align-items: start;
+    }
 }
 
 /*
     ######################################################################################
-    # viewport greater 1200px
+    # viewport greater 1400px
     #######################################################################################
 */
 @media (min-width: 1200px) {
@@ -420,6 +503,12 @@ footer {
         # main
         ##############################################
     */
+
+    .split {
+        background-color: var(--green);
+        width: 100%;
+        height: 100px;
+    }
 
     /*
         ##############################################
