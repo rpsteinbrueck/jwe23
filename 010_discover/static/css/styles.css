@@ -495,7 +495,7 @@ input {
     # viewport greater 1200px
     #######################################################################################
 */
-@media (min-width: 1920px) {
+@media (min-width: 1820px) {
     .inner_wrapper {
     }
 
