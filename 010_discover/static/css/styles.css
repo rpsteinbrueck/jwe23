@@ -157,6 +157,7 @@ body * {
     text-align: right;
     color: white;
     font-weight: 100;
+    line-height: 35px;
 }
 
 .hero b {
@@ -389,6 +390,7 @@ input {
     .hero > h1 {
         font-size: 75px;
         margin-right: 150px;
+        line-height: 55px;
     }
 
     /*
@@ -525,6 +527,7 @@ input {
     .hero > h1 {
         margin-right: 350px;
         font-size: 100px;
+        line-height: 70px;
     }
 
     /*
