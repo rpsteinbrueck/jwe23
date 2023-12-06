@@ -1,0 +1,429 @@
+/*
+    #######################################################################################
+    #
+    #    FILENAME: styles.css
+    #    DATE: 07.12.2023
+    #
+    #######################################################################################
+*/
+
+/*
+    #######################################################################################
+    # fonts
+    #######################################################################################
+*/
+
+/* "Cherry Swash" - regular */
+@font-face {
+    font-family: "Cherry Swash";
+    font-weight: 100;
+    src: url("../fonts/CherrySwash-Regular.ttf");
+}
+
+/* FONTNAME - bold */
+@font-face {
+    font-family: "Cherry Swash";
+    font-weight: 300;
+    src: url("../fonts/CherrySwash-Bold.ttf");
+}
+
+/*
+    #######################################################################################
+    # variables
+    #######################################################################################
+*/
+
+/*------- variables -------*/
+:root {
+    /* font */
+    --cherry: "Cherry Swash";
+
+    /* Colors: */
+    --green: #053336;
+    --gold: #a9a084;
+    --grey: #e8e8e8;
+    --white: #ffffff;
+    --black: #000000;
+
+    /*spacing*/
+    --space: 30px;
+}
+
+/*
+    #######################################################################################
+    # basic css structure
+    #######################################################################################
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inner_wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+/*
+    #######################################################################################
+    # HEADER, MAIN, FOOTER, etc.
+    #######################################################################################
+*/
+
+/*
+    ##############################################
+    # header
+    ##############################################
+*/
+
+footer {
+}
+
+.nav_bar {
+    background-color: var(--green);
+    padding-left: var(--space);
+    padding-right: var(--space);
+}
+
+.nav_bar > .inner_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 200px;
+    width: 100%;
+}
+
+#burger {
+}
+
+#logo img {
+    width: 200px;
+    height: 100px;
+}
+
+.hero {
+    background-image: url(../img/pexels-timo-a-4426930.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 57% 70%;
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: var(--space);
+    padding-right: var(--space);
+}
+
+.hero h1 {
+    color: var(--green);
+    font-family: var(--cherry);
+    font-size: 58px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 10px;
+}
+
+.hero h2 {
+    color: var(--green);
+    font-family: var(--cherry);
+    font-size: 38px;
+    line-height: 10px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.hero h3 {
+    color: var(--green);
+    font-family: Georgia;
+    font-size: 11px;
+    letter-spacing: 5px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.hero button {
+    text-decoration: none;
+    background-color: var(--green);
+    border: none;
+    border-radius: 20px;
+    height: 42px;
+    width: 144px;
+    color: var(--white);
+    font-family: var(--cherry);
+}
+
+.gold_bar {
+    background-color: var(--gold);
+    height: 5px;
+    width: 100%;
+}
+
+/*
+    ##############################################
+    # main
+    ##############################################
+*/
+
+.article_container {
+    background-color: var(--white);
+    padding-left: var(--space);
+    padding-right: var(--space);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.article_container article {
+    width: 315px;
+    height: 440px;
+}
+
+.article_container h2 {
+    color: var(--gold);
+    font-family: var(--cherry);
+    font-weight: 300;
+    font-size: 20px;
+    align-items: center;
+}
+
+.article_container img {
+    height: 231px;
+    width: 315px;
+}
+
+.article_container p {
+    color: var(--gold);
+    font-family: Georgia;
+    font-weight: 100;
+    font-size: 14px;
+    align-items: center;
+}
+
+.article_container a {
+    color: var(--green);
+    font-family: Georgia;
+    font-style: italic;
+    font-size: 14px;
+    align-items: center;
+}
+
+.grid_article {
+    background-color: var(--grey);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid_article h2 {
+    color: var(--green);
+    font-family: var(--cherry);
+    font-weight: 300;
+    font-size: 20px;
+    align-items: center;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px 15px;
+    grid-template-areas:
+        "img1 img1 img3 img3"
+        "img1 img1 img3 img3"
+        "img2 img2 img3 img3"
+        "img2 img2 img3 img3";
+}
+
+.img1 {
+    grid-area: img1;
+    width: 148px;
+    height: 100px;
+}
+.img2 {
+    grid-area: img2;
+    width: 148px;
+    height: 100px;
+}
+.img3 {
+    grid-area: img3;
+    width: 152px;
+    height: 210px;
+}
+
+.grid_article p {
+    color: var(--green);
+    font-family: Georgia;
+    font-weight: 100;
+    font-size: 14px;
+    align-items: center;
+}
+
+.book_now {
+    background-color: var(--gold);
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book_now h2 {
+    color: var(--white);
+    font-family: var(--cherry);
+    font-weight: 300;
+    font-size: 20px;
+    align-items: center;
+}
+
+.book_now p {
+    color: var(--white);
+    font-family: Georgia;
+    font-weight: 100;
+    font-size: 14px;
+    align-items: center;
+}
+
+.book_now button {
+    color: var(--white);
+    background-color: var(--gold);
+    border: 1px solid var(--white);
+    border-radius: 20px;
+    height: 42px;
+    width: 144px;
+}
+
+/*
+    ##############################################
+    # footer
+    ##############################################
+*/
+
+.footer_whole {
+    background-color: var(--green);
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_item1 {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_details {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.contact_details p {
+    color: var(--gold);
+    font-family: Georgia;
+    font-size: 14px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.footer_item2 {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.footer_item2 a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: Georgia;
+    font-size: 14px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+#copyright {
+    background-color: var(--gold);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+#copyright > p {
+    color: var(--green);
+    font-family: var(--cherry);
+    font-size: 10px;
+    font-weight: 100;
+    text-align: center;
+}
+
+/*
+    ######################################################################################
+    # viewport greater 768px
+    #######################################################################################
+*/
+@media (min-width: 768px) {
+    .inner_wrapper {
+    }
+
+    /*
+        ##############################################
+        # header
+        ##############################################
+    */
+
+    /*
+        ##############################################
+        # main
+        ##############################################
+    */
+
+    /*
+        ##############################################
+        # footer
+        ##############################################
+    */
+}
+
+/*
+    ######################################################################################
+    # viewport greater 1200px
+    #######################################################################################
+*/
+@media (min-width: 1200px) {
+    .inner_wrapper {
+    }
+
+    /*
+        ##############################################
+        # header
+        ##############################################
+    */
+
+    /*
+        ##############################################
+        # main
+        ##############################################
+    */
+
+    /*
+        ##############################################
+        # footer
+        ##############################################
+    */
+}
