@@ -372,7 +372,7 @@ input {
     # viewport greater 768px
     #######################################################################################
 */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .inner_wrapper {
     }
 
@@ -423,7 +423,7 @@ input {
     .picture_grid {
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        flex-basis: auto;
         justify-content: space-evenly;
     }
 
@@ -495,7 +495,7 @@ input {
     # viewport greater 1200px
     #######################################################################################
 */
-@media (min-width: 1200px) {
+@media (min-width: 1920px) {
     .inner_wrapper {
     }
 
