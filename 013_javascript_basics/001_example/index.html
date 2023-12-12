@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Javascript_basics example2</title>
+
+        <style>
+            body {
+                /*background-color: #dc3312;*/
+            }
+        </style>
+    </head>
+
+    <script>
+        document.write("Hi!");
+    </script>
+    <script src="./basics.js"></script>
+    <body id="bodycolor">
+        <!-- javascript dynamic_html gets added -->
+
+        <h1 id="heading">Javascript_basics</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+            eveniet unde fugit nemo doloribus deserunt autem quasi ea voluptatem
+            esse repudiandae architecto eos eius, minus in beatae similique
+            officiis veniam!
+        </p>
+        <button onclick="myFunctionName()">test</button>
+
+        <script>
+            // get information from the html document, examples:
+            let varh1_1 = document.querySelector("h1").innerText;
+            let varh1_2 = document.getElementById("heading").innerText;
+        </script>
+
+        <h2>
+            <script>
+                document.write(varh1_1, " ", varh1_2);
+            </script>
+        </h2>
+        <h2>
+            <script>
+                document.write(varh1_2);
+            </script>
+        </h2>
+
+        <button onclick="change_background()">change background color</button>
+    </body>
+</html>
