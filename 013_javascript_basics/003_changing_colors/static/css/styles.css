@@ -1,0 +1,46 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+.inner_wrapper {
+    min-width: 1200px;
+}
+
+.heading {
+    margin-top: 100px;
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+}
+
+#button_section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#text_buttons {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#background_buttons {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    #button_section {
+        flex-flow: row;
+    }
+}

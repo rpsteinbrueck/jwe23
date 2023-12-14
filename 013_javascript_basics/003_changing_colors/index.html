@@ -8,67 +8,93 @@
             href="../../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
             rel="stylesheet"
         />
+
+        <link rel="stylesheet" href="static/css/styles.css" />
     </head>
     <body id="bodycolor">
         <header>
-            <h1>Change the color with the following buttions</h1>
-            <p>
-                This is a random example of how to change color of text and
-                background using js
-            </p>
+            <div class="inner_wrapper">
+                <div class="heading">
+                    <h1>
+                        Change the color of this page with the following
+                        buttions
+                    </h1>
+                    <p>
+                        This is a random example of how to change color of text
+                        and background using js
+                    </p>
+                </div>
+            </div>
         </header>
         <main>
-            <div id="text_buttons">
-                <button
-                    class="btn btn-primary"
-                    onclick="change_textcolor('blue')"
-                >
-                    Change text color to blue
-                </button>
-                <button
-                    class="btn btn-primary"
-                    onclick="change_textcolor('red')"
-                >
-                    Change text color to red
-                </button>
-                <button
-                    class="btn btn-primary"
-                    onclick="change_textcolor('pink')"
-                >
-                    Change text color to pink
-                </button>
-                <button
-                    class="btn btn-primary"
-                    onclick="change_textcolor('green')"
-                >
-                    Change text color to green
-                </button>
-            </div>
-            <div id="background_buttons">
-                <button
-                    class="btn btn-primary"
-                    onclick="change_backgroundcolor('blue')"
-                >
-                    Change background color to blue
-                </button>
-                <button
-                    class="btn btn-primary"
-                    onclick="change_backgroundcolor('red')"
-                >
-                    Change background color to red
-                </button>
-                <button
-                    class="btn btn-primary"
-                    onclick="change_backgroundcolor('pink')"
-                >
-                    Change background color to pink
-                </button>
-                <button
-                    class="btn btn-primary"
-                    onclick="change_backgroundcolor('green')"
-                >
-                    Change background color to green
-                </button>
+            <div class="inner_wrapper">
+                <div id="button_section">
+                    <div id="text_buttons">
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_textcolor('blue')"
+                        >
+                            Change text color to blue
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_textcolor('red')"
+                        >
+                            Change text color to red
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_textcolor('pink')"
+                        >
+                            Change text color to pink
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_textcolor('green')"
+                        >
+                            Change text color to green
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_textcolor(gen_random_color())"
+                        >
+                            Change text color to random
+                        </button>
+                    </div>
+                    <div id="background_buttons">
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_backgroundcolor('blue')"
+                        >
+                            Change background color to blue
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_backgroundcolor('red')"
+                        >
+                            Change background color to red
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_backgroundcolor('pink')"
+                        >
+                            Change background color to pink
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_backgroundcolor('green')"
+                        >
+                            Change background color to green
+                        </button>
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="change_backgroundcolor(gen_random_color())"
+                        >
+                            Change background color to random
+                        </button>
+                    </div>
+                </div>
             </div>
         </main>
         <script src="../../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>

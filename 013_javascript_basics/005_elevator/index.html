@@ -1,0 +1,132 @@
+<!-- 
+#######################################################################################
+#
+#    FILENAME: 013_javascript_basics/004_thermostat/index.html
+#    DATE: 14.12.2023
+#
+#######################################################################################  
+-->
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thermostat</title>
+        <link
+            rel="stylesheet"
+            href="../../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
+        />
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            html * {
+                box-sizing: border-box;
+            }
+
+            body {
+                background: lightskyblue;
+            }
+
+            #ground {
+                width: 100%;
+                height: 20%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: rgb(87, 64, 64);
+            }
+
+            #building {
+                position: absolute;
+                bottom: 4%;
+                left: 30%;
+                width: 60%;
+                height: 80%;
+                background: gray;
+            }
+
+            #elevator {
+                width: calc(100% / 5);
+                height: calc(100% / 5);
+                background: darkolivegreen;
+                border: 3px solid yellow;
+
+                position: absolute;
+                --floor: 0;
+                bottom: calc(100% / 5 * var(--floor));
+                transition: all 3s ease-in-out;
+            }
+
+            .floor-3 {
+                --floor: 4 !important;
+            }
+
+            .floor-2 {
+                --floor: 3 !important;
+            }
+
+            .floor-1 {
+                --floor: 2 !important;
+            }
+
+            .floor-0 {
+                --floor: 1 !important;
+            }
+
+            .floor-ug {
+                --floor: 0 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header></header>
+            <main>
+                <div id="controls" style="height: 100px; width: 100px"></div>
+                <div id="ground"></div>
+
+                <div id="building">
+                    <div id="elevator"><h1 id="floor_number"></h1></div>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+
+        <script>
+            let currentFloor = 0;
+            let floors = ["ug", 0, 1, 2, 3];
+
+            let elevator = document.querySelector("#elevator");
+            let show_floor = document.querySelector("#floor_number");
+
+            elevator.classList.add("floor-" + currentFloor);
+
+            let change_floor = function (floor) {
+                let current_floor = elevator.classList.value;
+                elevator.classList.replace(current_floor, "floor-" + floor);
+                currentFloor = floor;
+
+                show_floor.innerHTML = floor;
+            };
+
+            let show_controls = function () {
+                let htmlOutput = "";
+                floors.forEach((floor) => {
+                    htmlOutput += `
+                    <button class="btn btn-primary" onclick="change_floor('${floor}')">
+                        ${floor}
+                    </button>
+                    `;
+                });
+
+                document.querySelector("#controls").innerHTML = htmlOutput;
+            };
+
+            show_controls();
+        </script>
+    </body>
+</html>

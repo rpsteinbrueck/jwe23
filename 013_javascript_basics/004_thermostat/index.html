@@ -1,0 +1,56 @@
+<!-- 
+#######################################################################################
+#
+#    FILENAME: 013_javascript_basics/004_thermostat/index.html
+#    DATE: 14.12.2023
+#
+#######################################################################################  
+-->
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thermostat</title>
+        <link
+            rel="stylesheet"
+            href="../../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
+        />
+        <link rel="stylesheet" href="static/css/styles.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header></header>
+            <main>
+                <div
+                    class="temperature d-flex flex-column align-items-center justify-content-center"
+                >
+                    <h1 class="display-1" style="margin-bottom: 100px">
+                        Temperature js example:
+                    </h1>
+                    <div id="display" class="display-1"></div>
+
+                    <div class="button_sections">
+                        <button
+                            id="temp_up"
+                            class="btn btn-primary btn-lg"
+                            onclick='change_temp("up")'
+                        >
+                            &nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</button
+                        ><button
+                            id="temp_down"
+                            class="btn btn-primary btn-lg"
+                            onclick='change_temp("down")'
+                        >
+                            &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                        </button>
+                    </div>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+
+        <script src="../../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+        <script src="static/js/thermostat.js"></script>
+    </body>
+</html>
