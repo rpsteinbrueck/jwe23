@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jQuery</title>
+    </head>
+    <body>
+        <div id="something_id"></div>
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>Line 1</li>
+                            <li>Line 2</li>
+                            <li>Line 3</li>
+                            <li>Line 4</li>
+                            <li>Line 5</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script>
+            /* javascript
+            document.querySelector("#something_id");*/
+
+            // jQuery
+            $("#something_id").html("<h1>This is jQuery outputting here.</h1>");
+
+            $("ul > li").eq(3).text();
+
+            $("ul > li")
+                .eq(3)
+                .html("This jQuery messing around with this line");
+
+            $("ul > li:nth-child(5)").html("This is another jQuery");
+
+            let firstLine = $("ul > li:nth-child(1)");
+            firstLine
+                .css("color", "red")
+                .html("jQuery changing css color and html text");
+        </script>
+    </body>
+</html>

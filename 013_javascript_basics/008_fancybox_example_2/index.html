@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>fancybox example</title>
+
+        <link rel="stylesheet" href="../../vendor/fancybox/fancybox.css" />
+    </head>
+    <body>
+        <div id="pictures"></div>
+        <script src="../../vendor/fancybox/fancybox.umd.js"></script>
+        <script>
+            let createDynamicGallery = function () {
+                // simple
+                /*let output = "";
+                for (let pic = 1; pic <= 4; pic++) {
+                    output += `<a href="img/${pic}.jpg" data-fancybox="gallery"><img src="img/thumbs/${pic}.jpg" alt=""/></a>\n`;
+                }*/
+
+                // array example
+                /* galleryImages = [
+                    "1","2","3","4"
+                ]
+                
+                galleryImages.forEach(function(img)){
+                    output += `<a href="img/${pic}.jpg" data-fancybox="gallery"><img src="img/thumbs/${pic}.jpg" alt=""/></a>\n`;
+                }
+                document.querySelector("#pictures").innerHTML = output;
+                */
+
+                // more advanced returning the same pictures a 100 times
+                let output = "";
+                for (let pic = "", number = 1; number <= 100; number++) {
+                    if (number % 4 == 0) {
+                        pic = 4;
+                    } else if (number % 3 == 0) {
+                        pic = 3;
+                    } else if (number % 2 == 0) {
+                        pic = 2;
+                    } else {
+                        pic = 1;
+                    }
+                    output += `<a href="img/${pic}.jpg" data-fancybox="gallery"><img src="img/thumbs/${pic}.jpg" alt=""/></a>\n`;
+                }
+                console.log(output);
+                document.querySelector("#pictures").innerHTML = output;
+            };
+
+            createDynamicGallery();
+
+            Fancybox.bind("[data-fancybox]", {
+                // Your custom options
+            });
+        </script>
+    </body>
+</html>
