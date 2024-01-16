@@ -24,7 +24,7 @@ let settings = {
     },
 };
 
-let pause = false;
+let stop = false;
 
 let changeTrafficLightColor = function (light, color) {
     $(light).css("background-color", color);
@@ -34,7 +34,7 @@ const switchTrafficLight = function (light, color, duration, current_state) {
     console.log("switching traffic light: ", light, color, duration, current_state);
 
     let trafficTimeout = window.setTimeout(function () {
-        if (pause == true) {
+        if (stop == true) {
             console.log("Traffic light simulation has been stopped")
             return;
         }
@@ -64,16 +64,12 @@ let resetTrafficLights = function () {
 
 let stopTrafficLights = function () {
     resetTrafficLights()
-    pause = true;
+    stop = true;
     settings.current_state = 0
 };
 
-/*let pauseTrafficLights = function () {
-    pause = true;
-};*/
-
 let playTrafficLights = function () {
-    pause = false;
+    stop = false;
     //console.log("current state = ", settings.current_state)
 
     let current_state = settings.current_state
