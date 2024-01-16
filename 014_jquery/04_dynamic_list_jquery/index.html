@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping list jquery</title>
+        <link
+            rel="stylesheet"
+            href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+        />
+        <style>
+            .class {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+
+            .form-check {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="class">
+            <div class="row">
+                <div class="col">
+                    <h1>Shopping list with jQeury</h1>
+                    <div class="input-group mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Add a new item to the shopping list ;)"
+                            aria-label="new_item"
+                            aria-describedby="new_item"
+                            id="new_item"
+                        />
+                        <button
+                            class="btn btn-outline-secondary"
+                            type="button"
+                            id="add_item"
+                        >
+                            Add
+                        </button>
+                    </div>
+                    <div id="item_list"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="/vendor/js.cookie/js.cookie.min.js"></script>
+        <script src="./static/js/dynamic_list_jquery.js"></script>
+    </body>
+</html>
