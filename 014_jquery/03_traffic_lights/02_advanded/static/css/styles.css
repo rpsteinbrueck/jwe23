@@ -1,0 +1,66 @@
+#remote {
+    position: fixed;
+    top: 400px;
+    width: 100px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#remote > button{
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+
+.container {
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+
+#traffic_light {
+    left: 200px;
+    width: 200px;
+    height: 600px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+#red_light {
+    position: relative;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    background-color: red; 
+}
+
+#yellow_light {
+    margin-top: 50px;
+    position: relative;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    background-color: yellow; 
+}
+
+#green_light {
+    margin-top: 50px;
+    position: relative;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    background-color: green; 
+}
+
+#pole {
+    background-color: grey;
+    width: 40px;
+    height: 100px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>traffic light</title>
+        <link rel="stylesheet" href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/styles.css">
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div class="onscreen_console">
+                
+            </div>
+            <div id="remote">
+                <button id="play_button" class="btn btn-primary" onclick="playTrafficLights()">
+                    play
+                </button>
+                <!--<button id="pause_button" class="btn btn-primary" >
+                    pause
+                </button>-->
+                <button id="stop_button" class="btn btn-primary" onclick="stopTrafficLights()">
+                    stop
+                </button>
+            </div>
+            <div class="container">
+                <div id="traffic_light">
+                    <div id="red_light">
+
+                    </div>
+                    <div id="yellow_light">
+
+                    </div>
+                    <div id="green_light">
+
+                    </div>
+                </div>
+                <div id="pole">
+
+                </div>
+            </div>
+        </div>
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+        <script src="./static/js/traffic_lights.js"></script>
+    </body>
+</html>
