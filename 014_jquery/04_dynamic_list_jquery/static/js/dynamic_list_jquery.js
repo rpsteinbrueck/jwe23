@@ -35,7 +35,8 @@ const addItem = function () {
     $("#new_item").val("").focus();
 };
 
-const deleteItem = function (item_id) {};
+const deleteItem = function (item_id) {
+};
 
 $("#add_item").on("click", addItem);
 $("#new_item").on("keyup", function (e) {
