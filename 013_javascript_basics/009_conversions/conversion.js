@@ -101,3 +101,16 @@ console.log(JSON.parse(serverResponse));
 let serverResponse2 =
     '{"test": 1, "email":"somerandom@email.address","Country":"South Africa"}';
 console.log(JSON.parse(serverResponse2));
+
+let myEmail = "random@email.local";
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+if (validateEmail(myEmail) == true) {
+    console.log(`${myEmail} is a valid email address`);
+} else {
+    console.log(`${myEmail} is not a valid email address`);
+}
