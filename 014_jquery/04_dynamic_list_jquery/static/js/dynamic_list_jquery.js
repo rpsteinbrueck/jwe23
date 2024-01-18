@@ -41,7 +41,7 @@ const addItem = function () {
     if (!filteredList.length) {
         itemList.push($("#new_item").val());
         Cookies.set("cookie_itemList", itemList, { expires: 365 });
-        localStorage.setItem("itemList", JSON.stringify(itemList));
+        localStorage.setItem("cookie_itemList", JSON.stringify(itemList));
         prependNewItem(itemList.length - 1, itemList[itemList.length - 1]);
     } else {
         $("#new_item").val("");
@@ -62,7 +62,7 @@ createItemList();
 
 const fuzzyFinder = function (filteredList) {
     $("#item_list").empty();
-    $(filteredList).each(prependNewItem());
+    $(filteredList).each(prependNewItem);
 };
 
 const filterList = function () {
@@ -74,5 +74,15 @@ const filterList = function () {
     fuzzyFinder(filteredList);
 };
 
-$("#new_item").on("keyup", filterList());
-$("#add_item").on("click", filterList());
+$("#new_item").on("keyup", filterList);
+$("#add_item").on("click", filterList);
+
+$("input.form-check-input").on("click", function () {
+    let checkbox = $(this);
+
+    console.log(checkbox.prop("checked"));
+
+    if (checkbox.prop("checked") == true) {
+        // save in array
+    }
+});
