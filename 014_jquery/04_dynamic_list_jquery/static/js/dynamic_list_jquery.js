@@ -77,7 +77,7 @@ const filterList = function () {
 $("#new_item").on("keyup", filterList);
 $("#add_item").on("click", filterList);
 
-$("input.form-check-input").on("click", function () {
+/*$("input.form-check-input").on("click", function () {
     let checkbox = $(this);
 
     console.log(checkbox.prop("checked"));
@@ -85,4 +85,18 @@ $("input.form-check-input").on("click", function () {
     if (checkbox.prop("checked") == true) {
         // save in array
     }
+});*/
+
+$("[data_item_id]").each(function (index, item) {
+    let element = $(this);
+
+    if (element.attr("data_item_id" == 1)) {
+        element.find("input.form-check-input").prop("checked", true);
+    }
 });
+
+/*$("input.form-check-input").each(function (index, input) {
+    if (input.attr("id") == "data_item" + 2) {
+        $(input).prop("checked", true);
+    }
+});*/
