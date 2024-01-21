@@ -1,4 +1,4 @@
-let itemList = ["bread"];
+let itemList = [];
 
 if (typeof Cookies.get("cookie_itemList") != "undefined") {
     itemList = Cookies.get("cookie_itemList").split(",");
@@ -15,22 +15,22 @@ ${item_name}
 <button
 class="btn btn-danger"
 type="button"
-data_item_id="${item_id}">
+data_item_id="${item_id}"
+onclick="rmItem('${item_id}')">
 Delete
 </button>
 </div>`);
 };
 
 const createItemList = function () {
-    $(itemList).each(function (item_id, item_name) {
-        prependNewItem(item_id, item_name);
-    });
+    if ( itemList !== 0) {
+        $(itemList).each(function (item_id, item_name) {
+            prependNewItem(item_id, item_name);
+        });
+    }
 };
 
 const addItem = function () {
-    /*if (typeof $("#new_item").val() != "undifined") {
-        return;
-    }*/
 
     let value = $("#new_item").val();
 
@@ -41,15 +41,13 @@ const addItem = function () {
     if (!filteredList.length) {
         itemList.push($("#new_item").val());
         Cookies.set("cookie_itemList", itemList, { expires: 365 });
-        localStorage.setItem("cookie_itemList", JSON.stringify(itemList));
+        //localStorage.setItem("cookie_itemList", JSON.stringify(itemList));
         prependNewItem(itemList.length - 1, itemList[itemList.length - 1]);
     } else {
         $("#new_item").val("");
     }
     $("#new_item").val("").focus();
 };
-
-//const deleteItem = function (item_id) {};
 
 $("#add_item").on("click", addItem);
 $("#new_item").on("keyup", function (e) {
@@ -58,7 +56,10 @@ $("#new_item").on("keyup", function (e) {
     }
 });
 
-createItemList();
+if (itemList.length !== 0) {
+    createItemList();
+}
+
 
 const fuzzyFinder = function (filteredList) {
     $("#item_list").empty();
@@ -87,16 +88,43 @@ $("#add_item").on("click", filterList);
     }
 });*/
 
-$("[data_item_id]").each(function (index, item) {
+/*$("[data_item_id]").each(function (index, item) {
     let element = $(this);
 
     if (element.attr("data_item_id" == 1)) {
         element.find("input.form-check-input").prop("checked", true);
     }
-});
+});*/
 
 /*$("input.form-check-input").each(function (index, input) {
     if (input.attr("id") == "data_item" + 2) {
         $(input).prop("checked", true);
     }
 });*/
+
+function rmItem(value) {
+	if (! value in itemList) {
+		return false;
+	} else {
+		delete itemList[value]
+	}
+
+	let newArr = []
+	for (let count = 0; count < itemList.length; count++) {
+		if (itemList[count] === undefined) {
+			continue
+		} else {
+			newArr.push(itemList[count])
+		}
+    }
+	itemList = newArr
+
+    $("#item_list").empty();
+    if (itemList.length !== 0) {    
+        Cookies.set("cookie_itemList", itemList, { expires: 365 });
+        createItemList()
+    } else {
+        Cookies.remove("cookie_itemList")
+    }
+	return true
+}
