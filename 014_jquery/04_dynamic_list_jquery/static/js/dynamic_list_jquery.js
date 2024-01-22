@@ -30,12 +30,16 @@ const createItemList = function () {
     }
 };
 
+
+
+
+
 const addItem = function () {
 
     let value = $("#new_item").val();
 
     let filteredList = itemList.filter(function (item) {
-        return item.toLowerCase().includes(value.toLowerCase());
+        return item.toLowerCase() == value.toLowerCase();
     });
 
     if (!filteredList.length) {
@@ -88,13 +92,14 @@ $("#add_item").on("click", filterList);
     }
 });*/
 
-/*$("[data_item_id]").each(function (index, item) {
+$("[data_item_id]").each(function (index, item) {
     let element = $(this);
 
     if (element.attr("data_item_id" == 1)) {
         element.find("input.form-check-input").prop("checked", true);
+        //$("[data_item_id]").find("input.form-check-input").prop("checked", true)
     }
-});*/
+});
 
 /*$("input.form-check-input").each(function (index, input) {
     if (input.attr("id") == "data_item" + 2) {
