@@ -106,21 +106,7 @@ const filterList = function () {
     fuzzyFinder(filteredList);
 };
 
-if (itemList.length !== 0) {
-    createItemList();
-}
-
-$("#add_item").on("click", addItem);
-$("#new_item").on("keyup", function (e) {
-    if (e.keyCode == 13) {
-        addItem();
-    }
-});
-
-$("#new_item").on("keyup", filterList);
-$("#add_item").on("click", filterList);
-
-$("input.form-check-input").on("click", function () {
+const checkboxLogic = function () {
     let checkbox = $(this);
 
     if (checkbox.prop("checked") !== true) {
@@ -153,4 +139,21 @@ $("input.form-check-input").on("click", function () {
             Cookies.set("cookie_checkboxList", checkboxList, { expires: 365 });
         }
     }
+}
+
+
+if (itemList.length !== 0) {
+    createItemList();
+}
+
+$("#add_item").on("click", addItem);
+$("#new_item").on("keyup", function (e) {
+    if (e.keyCode == 13) {
+        addItem();
+    }
 });
+
+$("#new_item").on("keyup", filterList);
+$("#add_item").on("click", filterList);
+
+$("input.form-check-input").on("click", checkboxLogic);
