@@ -19,7 +19,6 @@ const prependNewItem = function (item_id, item_name) {
     } else {
         checkboxStatus = ""
     }
-
     
     $("#item_list").prepend(`<div class="form-check" data_item_id="${item_id}">
                                 <input class="form-check-input" 
@@ -39,6 +38,8 @@ const prependNewItem = function (item_id, item_name) {
                                 </button>
                              </div>`
                             );
+
+    $("input.form-check-input").on("click", checkboxLogic);
 };
 
 const createItemList = function () {
@@ -87,6 +88,7 @@ function rmItem(value) {
         createItemList()
     } else {
         Cookies.remove("cookie_itemList")
+        checkboxList = [];
         Cookies.remove("cookie_checkboxList")
     }
 	return true
@@ -141,7 +143,6 @@ const checkboxLogic = function () {
     }
 }
 
-
 if (itemList.length !== 0) {
     createItemList();
 }
@@ -155,5 +156,3 @@ $("#new_item").on("keyup", function (e) {
 
 $("#new_item").on("keyup", filterList);
 $("#add_item").on("click", filterList);
-
-$("input.form-check-input").on("click", checkboxLogic);
