@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jquery practice 01</title>
+        <link
+            rel="stylesheet"
+            href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- dynamic HTML goes here-->
+        </div>
+
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+
+        <script>
+            $(".wrapper").append(
+                '<p class="classone"> added dynamic paragraph </p>'
+            );
+            $(
+                '<p class="classtwo">This is the second dynamic paragraph added differently</p>'
+            ).appendTo(".wrapper");
+
+            $(".wrapper").prepend(
+                '<div class="some_div_class"><h1>This is a heading<h1></div>'
+            );
+
+            $(".classone").attr("id", "dynamic-1");
+            $(".classone").removeAttr("id", "dynamic-1");
+            $(".classone").attr("id", "dynamic-1");
+            $(".classone").attr(
+                "style",
+                "color: white; background-color: orange"
+            );
+            $(".classone").attr("style");
+            $(".classtwo").css("background-color", "gray");
+            $(".classtwo").css("color", "white");
+
+            $(".classtwo").css({
+                "font-weight": "white",
+                "border-radius": "5px",
+            });
+
+            $("h1").css("background-color", "#f8d7da");
+
+            $("body").addClass("js-works");
+            $("body").removeClass("js-works");
+            $("body").addClass("js-works");
+        </script>
+    </body>
+</html>
