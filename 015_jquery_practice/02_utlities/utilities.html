@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>utilities</title>
+    </head>
+    <body>
+        <ul>
+            <li>vdscs</li>
+            <li>scdc s</li>
+            <li>csdcsdc</li>
+            <li>gbfbf</li>
+            <li>yxcyv</li>
+            <li>bfgbgf</li>
+        </ul>
+
+        <div>
+            User<br />
+            <input type="text" id="username" name="username" />
+        </div>
+
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+
+        <script>
+            $("li").each(function (index) {
+                console.log($(this).text());
+                $(this).css(
+                    "background-color",
+                    `hsl(${index * 10}, 50%, 50% )`
+                );
+            });
+
+            //example
+            //$.each($("li"), function(){})
+
+            //Arr utilities
+            console.log($.merge([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]));
+
+            let names = ["harry", "tom", "william"];
+            let names2 = ["kate", "Sophie", "Samantha"];
+
+            let mergeNames = $.merge(names2, names);
+
+            console.log(mergeNames);
+
+            $("#username").change(function () {
+                console.log($.trim($(this).val()));
+            });
+        </script>
+    </body>
+</html>

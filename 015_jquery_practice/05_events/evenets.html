@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>events</title>
+
+        <style>
+            body {
+                height: 1080px;
+                widht: 1080px;
+            }
+
+            #circle {
+                border: 1px solid red;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                transform: translateX(-50%) translateY(-50%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                /*mix-blend-mode: difference;*/
+                user-select: none;
+                pointer-events: none;
+                /*transition: 1s;*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="circle"></div>
+        <button id="myButton">button</button>
+        <a href="https://google.com">google</a>
+
+        <div>
+            Date <br />
+            <input type="date" name="cal" id="cal" />
+        </div>
+
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+
+        <script>
+            $("#myButton").on("click", function () {
+                console.log("hey! you clicked me");
+            });
+            /*$("#myButton").click(function () {
+                console.log("another click");
+            });*/
+
+            //remove event handler
+            $("#myButton").off("click");
+
+            $("a").click(function (e) {
+                e.preventDefault();
+                alert("this link was blocked by javascript");
+            });
+
+            $("#myButton").mouseover(function () {
+                $(this).css("background-color", "red");
+            });
+            $("#myButton").mouseleave(function () {
+                $(this).css("background-color", "green");
+            });
+
+            $("body").mousemove(function (e) {
+                console.log(e.pageX, e.pageY);
+                $("#circle").css({
+                    top: e.pageY,
+                    left: e.pageX,
+                });
+            });
+
+            $("#cal").change(function (e) {
+                console.log(e);
+                console.log(new Date($(this).val()));
+            });
+        </script>
+    </body>
+</html>

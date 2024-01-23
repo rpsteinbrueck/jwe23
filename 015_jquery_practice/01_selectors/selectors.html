@@ -3,19 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>jquery practice 01</title>
-        <link
-            rel="stylesheet"
-            href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
-        />
+        <title>selectors</title>
     </head>
     <body>
         <div class="wrapper">
             <!-- dynamic HTML goes here-->
         </div>
 
+        <div id="gallery"></div>
+
+        <div class="content"><p>test</p></div>
+
         <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
-        <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
 
         <script>
             $(".wrapper").append(
@@ -28,6 +27,18 @@
             $(".wrapper").prepend(
                 '<div class="some_div_class"><h1>This is a heading<h1></div>'
             );
+
+            for (let count = 0; count < 10; count++) {
+                $("#gallery").append(
+                    '<img src="https://placehold.co/100x100">'
+                );
+            }
+
+            $("#gallery img").wrap('<a href="#"</a>');
+
+            $("#gallary img").each(function (index, img) {
+                $(img).wrap('<a href="#"</a>');
+            });
 
             $(".classone").attr("id", "dynamic-1");
             $(".classone").removeAttr("id", "dynamic-1");
@@ -50,6 +61,22 @@
             $("body").addClass("js-works");
             $("body").removeClass("js-works");
             $("body").addClass("js-works");
+            $("body").addClass("js-works banana");
+            $("body").addClass(["js-works", "apples"]);
+
+            $(".classtwo").text("Wow, that changes everything!");
+            $(".classtwo").html("<p>Wow, that changes everything!</p>");
+
+            $("#gallery img").css("border", "3px solid orange");
+
+            $("div.content:contains('test')").replaceWith(
+                "<p>contains bad words</p>"
+            );
+
+            $(".wrapper").clone().appendTo("body");
+            $("#gallery").clone().appendTo("body");
+
+            $(".wrapper").last().remove();
         </script>
     </body>
 </html>
