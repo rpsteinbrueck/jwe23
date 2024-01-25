@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jquery api 2</title>
+    </head>
+    <body>
+        <div class="gallery"></div>
+
+        <button id="load">Load me</button>
+
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script>
+            const url = "https://jsonplaceholder.typicode.com/photos";
+
+            let requestGalleryFromApi = function () {
+                $.getJSON(url, function (r) {
+                    let htmlOut = "";
+                    $(r).each(function (index, entry) {
+                        if (index > 0 && index < 100) {
+                            htmlOut += `<img src="${entry.thumbnailUrl}"/>`;
+                        }
+
+                        if (index == 5) {
+                            console.log("index is 5");
+                        } else {
+                            console.log("index is not 5");
+                        }
+
+                        index == 5
+                            ? console.log("index is 5")
+                            : console.log("index is not five 5");
+                    });
+
+                    $(".gallery").html(htmlOut);
+                });
+            };
+
+            $("#load").on("click", requestGalleryFromApi);
+        </script>
+    </body>
+</html>

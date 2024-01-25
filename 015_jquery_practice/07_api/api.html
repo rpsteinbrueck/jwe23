@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>api example</title>
+    </head>
+    <body>
+        <div class="result"></div>
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script>
+            // bad example...
+
+            let requestGallery = function () {
+                $.get(
+                    "/013_javascript_basics/008_fancybox_example_2/index.html",
+                    function (data) {
+                        $(".result").html(data);
+                    }
+                );
+            };
+
+            requestGallery();
+        </script>
+    </body>
+</html>

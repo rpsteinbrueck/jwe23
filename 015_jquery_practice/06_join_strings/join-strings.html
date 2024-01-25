@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>join strings</title>
+    </head>
+    <body>
+        <div id="output"></div>
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script>
+            let person = {
+                firstname: "Random",
+                lastname: "Person",
+            };
+
+            $("#output").text("Hi" + person.firstname + person.lastname);
+            $("#output").text(`Hi ${person.firstname} ${person.lastname}!`);
+        </script>
+    </body>
+</html>
