@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>random</title>
+    </head>
+    <body>
+        <h1>Key generator</h1>
+
+        <div id="key"></div>
+        <button id="create_key">Create a key</button>
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script>
+            const allowedChars =
+                "AAKXwertqqwertuiopüzäöäljkgjsahdyxvnbQ!WQRLTESJXÄÖL";
+            const allowedCharslength = allowedChars.length;
+            const keyLength = 12;
+
+            const generateKey = function () {
+                let key = "";
+
+                for (let i = 0; i < keyLength; i++) {
+                    let allowedCharsRandomNumber = String(
+                        Math.floor(Math.random() * allowedCharslength)
+                    );
+                    let randomNumber = Math.floor(Math.random() * 10);
+
+                    if (randomNumber <= 5) {
+                        key += allowedCharsRandomNumber;
+                    } else {
+                        key += allowedChars[allowedCharsRandomNumber];
+                    }
+                }
+
+                //return key;
+                $("#key").html(`<p>${key}</p>`);
+                navigator.clipboard.writeText();
+            };
+            $("#create_key").on("click", generateKey);
+        </script>
+    </body>
+</html>
