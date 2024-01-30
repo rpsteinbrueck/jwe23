@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>quiz game</title>
+        <link
+            rel="stylesheet"
+            href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+        />
+        <style>
+            .name {
+                margin-top: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .menu {
+                margin-top: 200px;
+                height: 100px;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .result {
+                margin-top: 200px;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .question {
+                margin-top: 200px;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+            .all_buttons {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+
+            #question {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="name">Quiz Game</h1>
+
+        <div id="game"></div>
+
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+        <script>
+            Questions = [
+                {
+                    question:
+                        "The word 'republic' originates from the latin word 'res publika'. What does that mean?",
+                    answerPool: [
+                        "public affair",
+                        "I cam, I saw, I conquer",
+                        "Free your soul",
+                        "Love conquers all.",
+                    ],
+                    answer: 0,
+                },
+                {
+                    question: "How many people live in Namibia?",
+                    answerPool: [
+                        "45 000 000",
+                        "100 000",
+                        "3 000 000",
+                        "21 500 000",
+                    ],
+                    answer: 2,
+                },
+                {
+                    question: "How many people live in Austria?",
+                    answerPool: [
+                        "45 000 000",
+                        "100 000",
+                        "3 000 000",
+                        "8 956 000",
+                    ],
+                    answer: 3,
+                },
+                {
+                    question: "In sqare kilometers how big is Austria?",
+                    answerPool: [
+                        "83.871 km²",
+                        "17.100.000 km²",
+                        "824.292 km²",
+                        "9.834.000 km²",
+                    ],
+                    answer: 0,
+                },
+                {
+                    question: "In sqare kilometers how big is Namibia?",
+                    answerPool: [
+                        "83.871 km²",
+                        "17.100.000 km²",
+                        "824.292 km²",
+                        "9.834.000 km²",
+                    ],
+                    answer: 2,
+                },
+            ];
+            let questionState = 0;
+            let correct = 0;
+
+            function changeBackground(backgroundColor) {
+                let color = "black";
+                if (backgroundColor != "white") {
+                    color = "white";
+                } else {
+                    color = "black";
+                }
+
+                $("body").css({
+                    "background-color": backgroundColor,
+                    color: color,
+                });
+                $("#game").css({
+                    "background-color": backgroundColor,
+                    color: color,
+                });
+            }
+
+            function initResult() {
+                $("#game").html("");
+                $("#game").removeClass("question");
+                $("#game").addClass("result");
+                changeBackground("white");
+                $("#game").html(`<h2 id="result">Your results!</h2>`);
+                let correctPercentage = (correct / Questions.length) * 100;
+                $("#game").append(
+                    `<h3>You answered ${correctPercentage}% correctly</h3>`
+                );
+                $("#game").append(
+                    `<button id="try_again" class="btn btn-secondary">Try Again</button>`
+                );
+
+                $("#try_again").on("click", function () {
+                    questionState = 0;
+                    initQuestion(questionState);
+                });
+            }
+
+            function initQuestion(index) {
+                $("#game").html("");
+                $("#game").removeClass("menu");
+                $("#game").addClass("question");
+                changeBackground("white");
+                questionState++;
+
+                function correctAnswer() {
+                    let correctAnswer = Questions[index].answer;
+                    console.log($(this).attr("id"));
+                    if ($(this).attr("id") == correctAnswer) {
+                        $("#game").html(
+                            `${
+                                Questions[index].answerPool[$(this).attr("id")]
+                            } is the correct answer!`
+                        );
+                        changeBackground("#198754");
+                        correct++;
+                    } else {
+                        $("#game").html(
+                            `${
+                                Questions[index].answerPool[$(this).attr("id")]
+                            } is not the correct answer!`
+                        );
+                        changeBackground("#dc3545");
+                    }
+                    $("#game").append(
+                        `<button id="continue" class="btn btn-secondary">Continue</button>`
+                    );
+
+                    $("#continue").on("click", function () {
+                        console.log("clicked    ");
+                        if (questionState < Questions.length) {
+                            initQuestion(questionState);
+                        } else {
+                            initResult();
+                        }
+                    });
+                }
+
+                let htmlOutput = `
+                <p id=question>${Questions[index].question}</p>
+                <div class="all_buttons">
+                    <div class="button_row">
+                        <button id="0" class="btn btn-success">${Questions[index].answerPool[0]}</button>
+                        <button id="1" class="btn btn-warning">${Questions[index].answerPool[1]}</button></div>
+                    <div class="button_row">
+                        <button id="2" class="btn btn-danger">${Questions[index].answerPool[2]}</button>
+                        <button id="3" class="btn btn-primary">${Questions[index].answerPool[3]}</button>
+                    </div>
+                </div>
+                `;
+                $("#game").append(htmlOutput);
+
+                $("button").on("click", correctAnswer);
+            }
+
+            function play() {
+                $("#game").html("");
+                console.log("clicked play");
+                initQuestion(questionState);
+            }
+
+            function menu() {
+                let menuItems = ["play"];
+
+                $("#game").addClass("menu");
+
+                let htmlOutput = "";
+                for (let item of menuItems) {
+                    htmlOutput += `<button id=${item} class="btn btn-success">${item}</button>`;
+                    console.log(htmlOutput);
+                }
+                $(".menu").append(htmlOutput);
+
+                $("#play").on("click", play);
+            }
+            menu();
+        </script>
+    </body>
+</html>

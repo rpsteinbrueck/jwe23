@@ -9,6 +9,7 @@
         <div class="gallery"></div>
 
         <button id="load">Load me</button>
+        <button id="delete">Delete me</button>
 
         <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
         <script>
@@ -37,7 +38,12 @@
                 });
             };
 
+            function deleteGallery() {
+                $(".gallery").html("");
+            }
+
             $("#load").on("click", requestGalleryFromApi);
+            $("#delete").on("click", deleteGallery);
         </script>
     </body>
 </html>
