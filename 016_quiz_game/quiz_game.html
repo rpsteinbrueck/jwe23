@@ -24,14 +24,14 @@
                 align-items: center;
             }
             .result {
-                margin-top: 200px;
+                margin-top: 100px;
                 display: flex;
                 flex-flow: column;
                 justify-content: space-between;
                 align-items: center;
             }
             .question {
-                margin-top: 200px;
+                margin-top: 100px;
                 display: flex;
                 flex-flow: column;
                 align-items: center;
@@ -44,6 +44,15 @@
 
             #question {
                 text-align: center;
+                margin-bottom: 50px;
+            }
+
+            #recap {
+                margin-bottom: 50px;
+            }
+
+            #try_again {
+                margin-top: 50px;
             }
         </style>
     </head>
@@ -70,18 +79,18 @@
                 {
                     question: "How many people live in Namibia?",
                     answerPool: [
-                        "45 000 000",
-                        "100 000",
-                        "3 000 000",
-                        "21 500 000",
+                        "45 600 000",
+                        "112 000",
+                        "2 530 000",
+                        "21 500 400",
                     ],
                     answer: 2,
                 },
                 {
                     question: "How many people live in Austria?",
                     answerPool: [
-                        "45 000 000",
-                        "100 000",
+                        "45 120 000",
+                        "102 000",
                         "3 000 000",
                         "8 956 000",
                     ],
@@ -161,17 +170,17 @@
                     console.log($(this).attr("id"));
                     if ($(this).attr("id") == correctAnswer) {
                         $("#game").html(
-                            `${
+                            `<p id="recap">${
                                 Questions[index].answerPool[$(this).attr("id")]
-                            } is the correct answer!`
+                            } is the correct answer!</p>`
                         );
                         changeBackground("#198754");
                         correct++;
                     } else {
                         $("#game").html(
-                            `${
+                            `<p id="recap">${
                                 Questions[index].answerPool[$(this).attr("id")]
-                            } is not the correct answer!`
+                            } is not the correct answer!</p>`
                         );
                         changeBackground("#dc3545");
                     }
