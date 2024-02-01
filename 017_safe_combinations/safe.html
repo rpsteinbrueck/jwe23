@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript exam</title>
+        <link
+            rel="stylesheet"
+            href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+        />
+        <style>
+            #page {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            #safe .form-control {
+                width: 350px;
+                height: 50px;
+                margin-top: 50px;
+            }
+
+            .btn {
+                margin-top: 50px;
+                width: 150px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page"></div>
+        <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+        <script src="/vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script>
+            // -----variables------
+            let rs_page = $("#page");
+            let rs_safeCombination = "1234";
+
+            // -----makes #page responive with the above css------
+            function responsiveWindow() {
+                setInterval(function () {
+                    let rs_height = window.innerHeight;
+                    let rs_width = window.innerWidth;
+
+                    rs_page.css({ height: rs_height, width: rs_width });
+                }, 100);
+            }
+
+            // -----keyboard keydown eventhandler------
+            function keyboardEventHandler() {
+                onkeydown = (rs_e) => {
+                    if (rs_e.keyCode == 27) {
+                        menu();
+                    }
+
+                    if (rs_e.keyCode == 13 && $("button").length == 1) {
+                        $("button").click();
+                    }
+                };
+            }
+
+            // -----simple function to change background of #page------
+            function changeBackground(rs_backgroundColor) {
+                let rs_color = "black";
+
+                if (rs_backgroundColor != "white") {
+                    rs_color = "white";
+                }
+
+                $("#page").css({
+                    "background-color": rs_backgroundColor,
+                    color: rs_color,
+                });
+            }
+
+            // -----cleans #page for simple reloading------
+            function initPage() {
+                responsiveWindow();
+                rs_page.html("");
+                rs_page.attr("class", "");
+                changeBackground("white");
+                keyboardEventHandler();
+            }
+
+            // -----compare entered combination with actual safe combination ------
+            function openSafe() {
+                let rs_safeCodeEntered = $("#display").val();
+
+                function returnMsg(msg) {
+                    rs_page.append(`<h1>${msg}</h1>`);
+                }
+
+                function tryAgainButton() {
+                    rs_page.append(`<h1>Please try again</h1>
+                                  <button id="try_again" class="btn btn-primary">try again</button>`);
+                    $("#try_again").on("click", initSafe);
+                }
+
+                function returnToMenu() {
+                    rs_page.append(
+                        `<button id="return_to_menu" class="btn btn-warning">return to menu</button>`
+                    );
+                    $("#return_to_menu").on("click", menu);
+                }
+
+                if (isNaN(rs_safeCodeEntered)) {
+                    initPage();
+                    changeBackground("#ffc107");
+                    returnMsg("The digits entered must only contain numbers!");
+                    tryAgainButton();
+                } else if (rs_safeCodeEntered.length !== 4) {
+                    initPage();
+                    changeBackground("#007bff");
+                    returnMsg(
+                        "Must be exactly 4 digits entered into the display!"
+                    );
+                    tryAgainButton();
+                } else if (rs_safeCodeEntered !== rs_safeCombination) {
+                    initPage();
+                    changeBackground("#dc3545");
+                    returnMsg("That was the wrong combination!");
+                    tryAgainButton();
+                } else {
+                    initPage();
+                    changeBackground("#198754");
+                    returnMsg("That was the correct combination.");
+                    returnMsg("Safe has opened!");
+                    returnToMenu();
+                }
+            }
+
+            // -----Initiates page and loads elements for the safe------
+            function initSafe() {
+                initPage();
+                rs_page.html(`
+                    <h1>Safe combination</h1>
+                    <div id=safe>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter four digit combination to open safe"
+                            aria-label="display"
+                            aria-describedby="display"
+                            id="display"
+                            maxlength="4"
+                        />
+                        <div id=digits>
+                        </div>
+                        <button id="open" class="btn btn-success">Open</button>
+                    </div>`);
+                $("#open").on("click", openSafe);
+                $("#display").focus();
+            }
+
+            // -----Main menu and entrypoint for user------
+            function menu() {
+                initPage();
+
+                let rs_menuItems = ["start"];
+
+                rs_page.addClass("menu");
+                rs_page.html(`<h1>Safe combination</h1>
+                       <h2>JavaScript Exam 01.02.2024</h2>
+                       <h2>- rpsteinbrueck</h2>`);
+
+                for (let rs_item of rs_menuItems) {
+                    $(".menu").append(
+                        `<button id=${rs_item} class="btn btn-success">${rs_item}</button>`
+                    );
+                }
+                $("#start").on("click", initSafe);
+            }
+            menu();
+        </script>
+    </body>
+</html>

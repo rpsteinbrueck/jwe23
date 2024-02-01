@@ -124,8 +124,6 @@
                 let color = "black";
                 if (backgroundColor != "white") {
                     color = "white";
-                } else {
-                    color = "black";
                 }
 
                 $("body").css({
@@ -143,17 +141,16 @@
                 $("#game").removeClass("question");
                 $("#game").addClass("result");
                 changeBackground("white");
-                $("#game").html(`<h2 id="result">Your results!</h2>`);
                 let correctPercentage = (correct / Questions.length) * 100;
                 $("#game").append(
-                    `<h3>You answered ${correctPercentage}% correctly</h3>`
-                );
-                $("#game").append(
-                    `<button id="try_again" class="btn btn-secondary">Try Again</button>`
+                    `<h2 id="result">Your results!</h2>
+                     <h3>You answered ${correctPercentage}% correctly</h3>
+                     <button id="try_again" class="btn btn-secondary">Try Again</button>`
                 );
 
                 $("#try_again").on("click", function () {
                     questionState = 0;
+                    correct = 0;
                     initQuestion(questionState);
                 });
             }
@@ -167,7 +164,6 @@
 
                 function correctAnswer() {
                     let correctAnswer = Questions[index].answer;
-                    console.log($(this).attr("id"));
                     if ($(this).attr("id") == correctAnswer) {
                         $("#game").html(
                             `<p id="recap">${
