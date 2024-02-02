@@ -93,9 +93,9 @@
                     rs_page.append(`<h1>${msg}</h1>`);
                 }
 
-                function tryAgainButton() {
+                function tryAgainButton(rs_buttonColor) {
                     rs_page.append(`<h1>Please try again</h1>
-                                  <button id="try_again" class="btn btn-primary">try again</button>`);
+                                  <button id="try_again" class="btn btn-${rs_buttonColor}">try again</button>`);
                     $("#try_again").on("click", initSafe);
                 }
 
@@ -110,19 +110,19 @@
                     initPage();
                     changeBackground("#ffc107");
                     returnMsg("The digits entered must only contain numbers!"); 
-                    tryAgainButton();
+                    tryAgainButton("danger");
                 } else if (rs_safeCodeEntered.length !== 4) {
                     initPage();
                     changeBackground("#007bff");
                     returnMsg(
                         "Must be exactly 4 digits entered into the display!"
                     );
-                    tryAgainButton();
+                    tryAgainButton("warning");
                 } else if (rs_safeCodeEntered !== rs_safeCombination) {
                     initPage();
                     changeBackground("#dc3545");
                     returnMsg("That was the wrong combination!");
-                    tryAgainButton();
+                    tryAgainButton("success");
                 } else {
                     initPage();
                     changeBackground("#198754");
