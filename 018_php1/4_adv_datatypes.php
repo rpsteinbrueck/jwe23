@@ -95,6 +95,7 @@
     echo "My name is " . $arr3[4]["name"] . " and I am " . $arr3[4]["age"] . " years old and I have an account balance of " . $arr3[4]["account_balance"];
     echo "<br/>";
     echo "My name is {$arr3[4]["name"]} and I am {$arr3[4]["age"]} years old and I have an account balance of {$arr3[4]["account_balance"]}";
+
     ?>
 </body>
 </html> 
