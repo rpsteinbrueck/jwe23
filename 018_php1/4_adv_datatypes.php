@@ -60,8 +60,41 @@
     echo "</pre>";
     echo "<br/>";
 
-    echo $arr2["name"] . " (" . $arr2["age"] . ") " . "from Salzburg."
+    echo $arr2["name"] . " (" . $arr2["age"] . ") " . "from Salzburg.";
+    echo "<br/>";
+    echo "{$arr2["name"]} ({$arr2["age"]}) from Salzburg";
+    echo "<br/>";
 
+
+    # add to associative array
+    $arr2["eye_color"] = "green";
+    echo "<pre>";
+    print_r($arr2);
+    echo "</pre>";
+    echo "<br/>";
+
+
+    // multidimensional arrays
+    echo "<h1>multidimensional Arrays in PHP</h1>";
+    $arr3 = array(
+        "test", 
+        $arr2, 
+        $arr,
+        array("test","test2","test3"),
+        array("name"=>"some random name", "age"=>"27", "account_balance"=>"100"),
+    );
+    echo "<pre>";
+    print_r($arr3);
+    echo "</pre>";
+    echo "<br/>";
+
+
+    echo $arr3[1]["eye_color"];
+    echo "<br/>";
+
+    echo "My name is " . $arr3[4]["name"] . " and I am " . $arr3[4]["age"] . " years old and I have an account balance of " . $arr3[4]["account_balance"];
+    echo "<br/>";
+    echo "My name is {$arr3[4]["name"]} and I am {$arr3[4]["age"]} years old and I have an account balance of {$arr3[4]["account_balance"]}";
     ?>
 </body>
-</html>
+</html> 
