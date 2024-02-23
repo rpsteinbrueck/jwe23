@@ -9,8 +9,9 @@
     <?php
 
     echo "<h1>If example in PHP</h1>";
-
-    $time = 20;
+    echo "Current Time: ".date("G")." o'clock <br/>";
+    $time = date("G");
+    
     if ( $time >= 0 && $time <= 5 ) {
         echo "Sleep tight";
     } else if ( $time >= 6 && $time <= 9 ) {
