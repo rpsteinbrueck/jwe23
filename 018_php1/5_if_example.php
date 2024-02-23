@@ -12,13 +12,13 @@
     echo "Current Time: ".date("G")." o'clock <br/>";
     $time = date("G");
     
-    if ( $time >= 0 && $time <= 5 ) {
+    if ( $time <= 5 ) {
         echo "Sleep tight";
     } else if ( $time >= 6 && $time <= 9 ) {
         echo  "Good morning";
     } else if ( $time == 12 || $time == 18 ) {
         echo "Bon Appetit";
-    } else if ( $time >= 19 && $time <= 23 ) {
+    } else if ( $time >= 19 ) {
         echo "Good night";
     } else {
         echo "Hello";
