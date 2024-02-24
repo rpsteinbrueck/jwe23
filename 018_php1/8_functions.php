@@ -36,12 +36,35 @@
 
     $date_mysql = "2024-02-24";
 
-    function format_date ($date) {
+    function format_date_de ($date) {
         return substr($date, -2) . "." . substr($date, 5 , 2) . ".". substr($date, 0, 4);
     }
 
     echo "orignal date: " . $date_mysql . "<br/>";
-    echo "New date: ". format_date($date_mysql);
+    echo "New date: ". format_date_de($date_mysql);
+    echo "<br/>";
+
+    // alternative 1
+    function format_date_de_with_date($date) {
+        return date_format(date_create($date), "d.m.Y");
+    }
+    echo "New date: ". format_date_de_with_date($date_mysql);
+    
+
+    echo "<br/>";
+
+    // alternative 2
+    function format_date_de_with_date_2($date) {
+        $items =  explode("-", $date);
+        echo "<pre>";
+        print_r($items);
+        echo "</pre>";
+
+        return $items[2] . "." . $items[1] . "." . $items[0];
+    }
+    echo "New date: ". format_date_de_with_date_2($date_mysql);
+    
+
     echo "<br/>";
     ?>
 </body>
