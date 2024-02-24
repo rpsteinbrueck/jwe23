@@ -66,6 +66,26 @@
     
 
     echo "<br/>";
+
+    echo "<h2>cut and replace</h2>";
+
+    $sentence = "Lorem ipsum dolor";
+    echo "Original string: " . $sentence;
+    echo "<br/>";
+
+    function cut_and_replace ($string, $length = 10, $replacement = "...") {
+        if (strlen($string) <= $length ) {
+            return $string;
+        } else { 
+            return substr($string, 0, $length) . $replacement;
+        }
+    }
+
+    echo "New string: " . cut_and_replace($sentence);
+    echo "<br/>";
+
+    echo "New string: " . cut_and_replace("four", 3, "!!!");
+
     ?>
 </body>
 </html>
