@@ -7,6 +7,16 @@
 </head>
 <body>
     <?php 
+
+    // description
+    echo "<h1>Arrays in PHP</h1><br/>";
+    echo "<ul>
+            <li>numeric arrays with numbered index</li>
+            <li>associative array with string index</li>
+          </ul><br/>";
+    
+
+
     // numeric arrays   
     echo "<h1>Numeric Arrays in PHP</h1>";
 

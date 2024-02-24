@@ -42,7 +42,7 @@
         \t
         \$
         \\
-        \
+        \"
 
         */
 
@@ -58,6 +58,7 @@
         // I have random first name pen
         echo "I have $name"."s"." pen!";
         echo "I have " . $name . "s" . " pen!";
+        echo "I have {$name}s pen!"
 
         //datatype boolean
         $true = true;
@@ -66,20 +67,26 @@
         echo $true;
         echo "<br/>";
         echo ">".$false."<";
-
+        echo "<br/>";
+        echo "true always shows 1"
+        echo "<br/>";
+        echo "false outputs nothing"
+        echo "<br/>";
 
         // datatype null
         $nothing = null;
         echo $nothing; 
         echo "<br/>";
 
-        
-
         // constant
+        //old way of writing constants
         define("database", "php23");
         echo database;
         echo "<br/>";
+        echo "constants are always written without the $ sign"
+        echo "<br/>";
 
+        // new way of writing constants
         const database2 = "php24";
         echo database2;
 
