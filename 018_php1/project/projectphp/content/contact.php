@@ -1,3 +1,14 @@
+                <?php
+                    if (! empty($_POST)) {
+                        #echo "<pre>";
+                        #print_r($_POST);
+                        #echo "</pre>";
+
+                        $arr = $_POST;
+                        echo "<p>Thanks <bold>{$arr['name']}</bold>, for contacting us!</p>";
+                    }
+
+                ?>
                 <div class="text">
                 <h1>Kontakt</h1>
                 <div class="left">
@@ -17,7 +28,7 @@
                     </p>
                 </div>
                 <div class="contact right">
-                    <form>
+                    <form action="" method="post">
                         <div>
                             <input type="text" id="name" name="name" value="Name" />
                         </div>
