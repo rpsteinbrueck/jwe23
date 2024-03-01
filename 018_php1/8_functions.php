@@ -74,7 +74,7 @@
     echo "<br/>";
 
     function cut_and_replace ($string, $length = 10, $replacement = "...") {
-        if (strlen($string) <= $length ) {
+        if (strlen($string) < $length ) {
             return $string;
         } else { 
             return substr($string, 0, $length) . $replacement;

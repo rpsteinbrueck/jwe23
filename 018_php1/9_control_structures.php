@@ -45,8 +45,17 @@
 
         echo "<br/>";
 
+        echo "<h2>for loop  that prints out 10 columns in PHP</h2>";
+        echo "<table border=\"1\"><th>number</th>";
 
-        echo "<h2>for loop in PHP</h2>";
+        for ($i=1; $i <= 10; $i++) {
+            echo "<td>" . $i . "</td>";
+        }
+        echo "</table>";
+        echo "<br/>";
+
+
+        echo "<h2>for loop  that prints out 10 rows in PHP</h2>";
         echo "<table border=\"1\"><th>number</th>";
 
         for ($i=1; $i <= 10; $i++) {
@@ -55,7 +64,7 @@
         echo "</table>";
         echo "<br/>";
 
-        echo "<h2>for loop 1x1 table in PHP</h2>";
+        echo "<h2>for loop 1x1 to 10x10 table in PHP</h2>";
         echo "<table border=\"1\">";
 
         for ($i=1; $i <= 10; $i++) {
@@ -73,6 +82,26 @@
         echo "</table>";
         echo "<br/>";
 
+
+        echo "<h2>for loop 1x1 to 50x50 table in PHP</h2>";
+        echo "<table border=\"1\">";
+
+        for ($i=1; $i <= 50; $i++) {
+            echo "<tr>";
+            for ($j=1; $j <= 50; $j++ ) {
+                $bg_color = "white";
+                $show_number = $i * $j;
+                if ($show_number % 7 == 0 ) {
+                    $show_number = "*";
+                    $bg_color = "green";
+                } 
+                echo "<td style=\"background-color: {$bg_color}\">" . $show_number . "</td>";
+
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+        echo "<br/>";      
 
     ?>
 </body>
