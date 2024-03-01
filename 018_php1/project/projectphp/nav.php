@@ -19,12 +19,12 @@ echo "<nav><ul>";
 
 foreach ($nav_items as $i) {
     $sitename = strtolower($i);
+    
     if ( $sitename == $site ) {
         $state = "active";
     } else {
         $state = "";
     }
-    
     echo "<li class=\"{$state}\"><a href=\"?site={$sitename}\">{$i}</a></li>";
 }
 

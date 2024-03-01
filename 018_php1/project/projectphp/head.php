@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
     <head>
-        <title>WIFI Demo</title>
+        <title><?php echo htmlspecialchars($page_title); ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
         <meta name="keywords" content="" />
-        <meta name="description" content="" />
-
+        <?php
+            echo "<meta name=\"description\" content=\"{$meta_desc}\" />"
+        ?>
         <link href="css/screen.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
