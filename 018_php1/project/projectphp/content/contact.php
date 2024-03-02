@@ -40,10 +40,19 @@
                             if (! preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/", strtolower($arr['email']))){
                                 echo "<p style=\"color: {$color_red};font-size: 24px;\"> - Error: The entered email adress is not valid!</p>";
                             } else {
-                                #echo "<p style=\"color: {$color_green};\">email is correct</p>"; 
                                 echo "<p style=\"color: {$color_green}; font-size: 24px;\">Thanks <bold>{$arr['name']}</bold>, for contacting us!</p>";
                                 echo "<p style=\"color: {$color_green}; font-size: 24px;\">We will get back to you ASAP!</p>";
+                                
                                 $display_form = false; 
+
+                                $mail_content = "Request over contact formular:
+                                    
+Name: {$arr['name']}
+Email: {$arr['email']}
+Message: {$arr['message']}";
+                                $date = date("hisdmY");
+                                mail("support@test.local", "Contact formular over werbsite from {$arr['name']}", $mail_content);
+                                file_put_contents("data/contact_form/{$arr['email']}_{$date}.txt", $mail_content);
                             }
                         } else {
                             if (!empty($error_arr)) {
