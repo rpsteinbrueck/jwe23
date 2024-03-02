@@ -17,7 +17,8 @@
                             array_push($error_arr, "name");
                             $form_error = true; 
                         } else if (strlen($arr['name']) <=2 ) {
-                            echo "<p style=\"color: {$color_red};font-size: 24px;\">Error: name should be more than two characters!</p>";
+                            echo "<p style=\"color: {$color_red};font-size: 24px;\"> - Error: name should be more than two characters!</p>";
+                            $form_error = true; 
                         }
 
                         if (empty($arr['email']) || $arr ['email'] == 'E-Mail') {
@@ -32,7 +33,7 @@
 
                         if (! $form_error ==  true) {
                             if (! preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/", strtolower($arr['email']))){
-                                echo "<p style=\"color: {$color_red};font-size: 24px;\">The entered email adress is not valid!</p>";
+                                echo "<p style=\"color: {$color_red};font-size: 24px;\"> - Error: The entered email adress is not valid!</p>";
                             } else {
                                 #echo "<p style=\"color: {$color_green};\">email is correct</p>"; 
                                 echo "<p style=\"color: {$color_green}; font-size: 24px;\">Thanks <bold>{$arr['name']}</bold>, for contacting us!</p>";
@@ -40,7 +41,9 @@
                                 $display_form = false; 
                             }
                         } else {
-                            echo "<p style=\"color: {$color_red};font-size: 24px;\">Error: " .  implode( ", ", $error_arr) . " was not given!   </p>";
+                            if (!empty($error_arr)) {
+                                echo "<p style=\"color: {$color_red};font-size: 24px;\"> - Error: " .  implode( ", ", $error_arr) . " was not given!   </p>";
+                            }
                         }
                     }
                 ?>
@@ -68,13 +71,25 @@
                     ?>
                     <form action="" method="post">
                         <div>
-                            <input type="text" id="name" name="name" value="Name" />
+                            <input type="text" id="name" name="name" value="<?php if (!empty($arr['name'])) {
+                                echo htmlspecialchars($arr['name']);
+                            } else {
+                                echo 'Name';
+                            }?>" />
                         </div>
                         <div>
-                            <input type="text" id="email" name="email" value="E-Mail" />
+                            <input type="text" id="email" name="email" value="<?php if (!empty($arr['email'])) {
+                                echo htmlspecialchars($arr['email']);
+                            } else {
+                                echo "E-Mail";
+                            }?>" />
                         </div>
                         <div>
-                            <textarea id="message" name="message">Ihre Nachricht</textarea>
+                            <textarea id="message" name="message"><?php if (!empty($arr['message'])) {
+                                echo $arr['message'];
+                            } else {
+                                echo htmlspecialchars("Ihre Nachricht");
+                            }?></textarea>
                         </div>
                         <div style="text-align: right;">
                             <button type="submit" id="submit" name="submit">Absenden</button>
