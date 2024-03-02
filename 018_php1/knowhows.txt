@@ -1,0 +1,23 @@
+mail("email", "heading", "content");
+
+file_put_contents("files/test.txt", "content that i will be posting into the file");
+
+$content = file_get_contents("daten/test.txt");
+echo $content;
+
+
+
+
+// Date regex checker
+$date = "24.12.2023";
+
+if (preg_match("/^[0-9]+\.[0-9]+\.20[0-9]+$/", $date)) {
+    echo "Date is correct"; 
+}
+
+// email address regex checker
+$mail_adress = "test@domain.local";
+
+if (preg_match("/^[a-z]+\@[a-z]+\.[a-z]+$/", $mail_adress)) {
+    echo "email is correct"; 
+}
