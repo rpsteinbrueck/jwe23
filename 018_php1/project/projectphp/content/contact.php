@@ -44,15 +44,66 @@
                                 echo "<p style=\"color: {$color_green}; font-size: 24px;\">We will get back to you ASAP!</p>";
                                 
                                 $display_form = false; 
+                                $date = date("hisdmY");
 
-                                $mail_content = "Request over contact formular:
+                                # mail style config can either be html or plain
+                                #$X_CONFIG_MAIL_STYLE = "plain"
+                                $X_CONFIG_MAIL_STYLE = "html";
+
+                                if ($X_CONFIG_MAIL_STYLE ==  "plain") {
+                                    $mail_content = "Request over contact formular:
                                     
 Name: {$arr['name']}
 Email: {$arr['email']}
 Message: {$arr['message']}";
-                                $date = date("hisdmY");
+                                    $outpot_file =  "data/contact_form/plain/{$arr['email']}_{$date}.txt";
+                                } else if ($X_CONFIG_MAIL_STYLE == "html") {
+                                    $mail_content = "
+<head>
+<style>
+#page {
+    color: \"white\";
+    display: \"flex\";
+    justify-content: \"center\";
+    align-items: \"center\";
+}
+
+#content {
+    width: \"400px\";
+    height: \"400px\";
+    display: \"flex\";
+    justify-content: \"center\";
+    align-items: \"center\";
+}
+
+h1 {
+    color: \"black\";
+    text-align: \"center\";
+    
+}
+
+p {
+    color: \"black\";
+    text-align: \"center\";
+    
+}
+</style>
+</head>
+
+<div id=\"page\">
+<div id=\"content\">
+<h1>Request over contact formular:</h1>
+<br/>                                    
+<p>Name: {$arr['name']}</p>
+<p>Email: {$arr['email']}</p>
+<p>Message: {$arr['message']}</p>
+</div>
+</div>";
+                                    $outpot_file =  "data/contact_form/html/{$arr['email']}_{$date}.html";
+                                }
+
                                 mail("support@test.local", "Contact formular over werbsite from {$arr['name']}", $mail_content);
-                                file_put_contents("data/contact_form/{$arr['email']}_{$date}.txt", $mail_content);
+                                file_put_contents($outpot_file, $mail_content);
                             }
                         } else {
                             if (!empty($error_arr)) {

@@ -1,5 +1,0 @@
-Request over contact formular:
-                                    
-Name: Name123124
-Email: E-Mail123123@gmail.com
-Message: Ihre Nachricht123123123

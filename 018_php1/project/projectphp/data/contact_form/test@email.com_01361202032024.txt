@@ -1,5 +1,0 @@
-Request over contact formular:
-                                    
-Name: 1234
-Email: test@email.com
-Message: Ihre Nachricht123124134123

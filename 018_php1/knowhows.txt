@@ -15,7 +15,7 @@ if (preg_match("/^[0-9]+\.[0-9]+\.20[0-9]+$/", $date)) {
     echo "Date is correct"; 
 }
 
-// email address regex checker
+// emio regex checker
 $mail_adress = "test@domain.local";
 
 if (preg_match("/^[a-z]+\@[a-z]+\.[a-z]+$/", $mail_adress)) {
