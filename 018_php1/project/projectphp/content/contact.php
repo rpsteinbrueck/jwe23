@@ -25,6 +25,11 @@
                             array_push($error_arr, "email");
                             $form_error = true; 
                         }
+   
+                        if (!empty($arr['test'])) {
+                            echo "<p style=\"color: {$color_red};font-size: 24px;\"> - Error: do not enter the test field!</p>";
+                            $form_error = true; 
+                        }
 
                         if (empty($arr['message']) || $arr ['message'] == 'Ihre Nachricht') {
                             array_push($error_arr, "message");
@@ -32,7 +37,7 @@
                         }
 
                         if (! $form_error ==  true) {
-                            if (! preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/", strtolower($arr['email']))){
+                            if (! preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/", strtolower($arr['email']))){
                                 echo "<p style=\"color: {$color_red};font-size: 24px;\"> - Error: The entered email adress is not valid!</p>";
                             } else {
                                 #echo "<p style=\"color: {$color_green};\">email is correct</p>"; 
@@ -83,6 +88,9 @@
                             } else {
                                 echo "E-Mail";
                             }?>" />
+                        </div>
+                        <div>
+                            <input type="text" id="test" name="test" placeholder="Leave this form empty" />
                         </div>
                         <div>
                             <textarea id="message" name="message"><?php if (!empty($arr['message'])) {
