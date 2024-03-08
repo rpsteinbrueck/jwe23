@@ -50,55 +50,64 @@
                                 #$X_CONFIG_MAIL_STYLE = "plain"
                                 $X_CONFIG_MAIL_STYLE = "html";
 
-                                if ($X_CONFIG_MAIL_STYLE ==  "plain") {
-                                    $mail_content = "Request over contact formular:
+                                if ($X_CONFIG_MAIL_STYLE ==  "TEXT") {
+                                    $mail_content =<<<EOF
+Request over contact formular:
                                     
 Name: {$arr['name']}
 Email: {$arr['email']}
-Message: {$arr['message']}";
+Message: {$arr['message']}
+EOF;
                                     $outpot_file =  "data/contact_form/plain/{$arr['email']}_{$date}.txt";
                                 } else if ($X_CONFIG_MAIL_STYLE == "html") {
-                                    $mail_content = "
-<head>
-<style>
-#page {
-    color: \"white\";
-    display: \"flex\";
-    justify-content: \"center\";
-    align-items: \"center\";
-}
+                                    $mail_content =<<<EOF
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{$arr['name']}</title>
+        <style>
+            #page {
+                background-color: #f2f2f2;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+            }
 
-#content {
-    width: \"400px\";
-    height: \"400px\";
-    display: \"flex\";
-    justify-content: \"center\";
-    align-items: \"center\";
-}
+            #content {
+                background-color: #ffffff;
+                width: 400px;
+                height: 400px;
+                display: flex;
+                flex-flow: column;
+            }
 
-h1 {
-    color: \"black\";
-    text-align: \"center\";
-    
-}
+            h1 {
+                color: black;
+                text-align: center;
+            }
 
-p {
-    color: \"black\";
-    text-align: \"center\";
-    
-}
-</style>
-</head>
-
-<div id=\"page\">
-<div id=\"content\">
-<h1>Request over contact formular:</h1>
-<br/>                                    
-<p>Name: {$arr['name']}</p>
-<p>Email: {$arr['email']}</p>
-<p>Message: {$arr['message']}</p>
-</div>
-</div>";
+            p {
+                color: black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page">
+            <div id="content">
+                <h1>Request over contact formular:</h1>
+                <br/>                                    
+                <p>Name: {$arr['name']}</p>
+                <p>Email: {$arr['email']}</p>
+                <p>Message: {$arr['message']}</p>
+            </div>
+        </div>
+    </body>
+</html>
+EOF;
                                     $outpot_file =  "data/contact_form/html/{$arr['email']}_{$date}.html";
                                 }
 
