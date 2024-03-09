@@ -6,7 +6,7 @@
 			#	
 			###########################
 
-			include "/include/functions.php"
+			include "include/functions.php"
 		?>
 		<div id='journal'>
 			<div class='wrapper'>
