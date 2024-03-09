@@ -57,7 +57,7 @@
 						echo "<p style=\"color: {$color_red};font-size: 18px;\"> - Fehler: Kennwort sollte mindestens 6 Zeichen lang sein.</p>";
 						$form_error = true; 
 					} elseif (! preg_match("@[a-zA-Z]@", $_POST['passwort']) || ! preg_match("@[0-9]@", $_POST['passwort']) || ! preg_match("@[^\w]@", $_POST['passwort'])) {
-						echo "<p style=\"color: {$color_red};font-size: 18px;\"> - Fehler: Kennwort muss mindestens aus einen Buchstaben, eine Zahl und ein Sonderzeichen beinhalten.</p>";
+						echo "<p style=\"color: {$color_red};font-size: 18px;\"> - Fehler: Kennwort muss mindestens einen Buchstaben, eine Zahl und ein Sonderzeichen beinhalten.</p>";
 						$form_error = true; 
 					} 
 				

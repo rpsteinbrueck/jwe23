@@ -11,7 +11,7 @@
 	###################################
 	function zufallspasswort ($length=8) {
 		$random_password = "";
-		for ($i = 0; $i <= $length; $i++) {
+		for ($i = 0; $i < $length; $i++) {
 			$random_number = rand(0,9);
 			if ($random_number < 3) {
 				###############################################
