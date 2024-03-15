@@ -1,5 +1,7 @@
 <?php
 include "functions.php";
+is_logged_in();
+
 
 include "head.php";
 ?>
@@ -10,7 +12,7 @@ include "head.php";
     $result = mysqli_query($con, "SELECT * FROM ingredients ORDER BY name ASC");
     #print_r($result);
 
-    echo "<table border=1>";
+    echo "<table>";
     echo "<thread>";
     echo "<tr>";
     echo "<th>Name</th>";
@@ -23,7 +25,7 @@ include "head.php";
     while($row = mysqli_fetch_assoc($result)){
         echo "<tr>";
         echo "<td>{$row["name"]}</td>";
-        echo "<td>{$row["ckal/100g"]}</td>";
+        echo "<td>{$row["kcal/100g"]}</td>";
         echo "<td>{$row["amount"]}</td>";
         echo "<td>{$row["unit"]}</td>";
         echo "</tr>";
