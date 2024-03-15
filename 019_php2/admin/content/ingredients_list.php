@@ -1,10 +1,3 @@
-<?php
-include "functions.php";
-is_logged_in();
-
-
-include "head.php";
-?>
 
 <h1>Ingredients</h1>
 
@@ -25,7 +18,7 @@ include "head.php";
     while($row = mysqli_fetch_assoc($result)){
         echo "<tr>";
         echo "<td>{$row["name"]}</td>";
-        echo "<td>{$row["kcal/100g"]}</td>";
+        echo "<td>{$row["kcal"]}</td>";
         echo "<td>{$row["amount"]}</td>";
         echo "<td>{$row["unit"]}</td>";
         echo "</tr>";
@@ -34,7 +27,4 @@ include "head.php";
     echo "</table>";
 ?>
 
-<?php
-
-include "footer.php";
-?>
+<button class="btn btn-success" style="margin-top: 50px;"><a href="?site=ingredient_new">Add ingredient</a></button>

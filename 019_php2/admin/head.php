@@ -9,7 +9,7 @@
             href="../../vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
         />
     <style>
-        body {
+        main {
             padding: 50px;
             display: flex;
             flex-flow: column;
@@ -17,22 +17,22 @@
             align-items: center;
         }
 
-        nav {
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 400px;
-            list-style-type: none;
-        }
-
         .options {
             display: flex;
             flex-flow: row;
             justify-content: space-between;
             align-items: center;
-            width: 400px;
+            width: 260px;
             list-style-type: none;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .option1 {
+            width: 200px;
+        }
+
+        h1 {
             margin-bottom: 50px;
         }
 
@@ -65,12 +65,14 @@
     </style>
 </head>
 <body>
-    <nav>
-        <h2>Menu</h2>
-        <div class="options">
-            <button class="btn btn-success"><a href="index.php">Start</a></button>
-            <button class="btn btn-success"><a href="ingredients_list.php">Ingredients</a></button>
+    <nav class="navbar navbar-light" style="background-color: #116969;">
+        <div class="options option1">
+            <a href="?site=home">Home</a>
+            <a href="?site=ingredients_list">Ingredients</a>
+        </div>
+        <div class="options option2">
             <a href="#">logged in as: <?php echo $_SESSION["username"]; ?></a>
-            <button class="btn btn-success"><a href="logout.php">Logout</a></button>
+            <button class="btn btn-success"><a href="logout.php" style="color: white;">Logout</a></button>
         </div>
     </nav>
+    <main>

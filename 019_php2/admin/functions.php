@@ -15,4 +15,9 @@ function is_logged_in() {
         exit;
     }
 }
+
+function escape($post_var) {
+    global $con;
+    return mysqli_real_escape_string($con, $post_var);
+} 
 ?>

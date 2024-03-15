@@ -10,9 +10,9 @@
             $error = "username, password must be filled!";
         } else {
             # prevents sql injection
-            $sql_username = mysqli_real_escape_string($con, $_POST["username"]);
+            $sql_username = escape($_POST["username"]);
             
-            $sql_query = "SELECT * FROM users WHERE username = '{$sql_username}'";
+            $sql_query = "SELECT * FROM users WHERE username = '{$sql_name}'";
             $result = mysqli_query($con, $sql_query);
 
             #echo "<pre>";
