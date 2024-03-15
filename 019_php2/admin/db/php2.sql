@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 09. Mrz 2024 um 15:16
+-- Erstellungszeit: 15. Mrz 2024 um 20:24
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -32,20 +32,21 @@ CREATE TABLE `ingredients` (
   `name` varchar(50) NOT NULL,
   `amount` float DEFAULT NULL,
   `unit` varchar(50) DEFAULT NULL,
-  `kcal/100g` float NOT NULL
+  `kcal` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `ingredients`
 --
 
-INSERT INTO `ingredients` (`id`, `name`, `amount`, `unit`, `kcal/100g`) VALUES
+INSERT INTO `ingredients` (`id`, `name`, `amount`, `unit`, `kcal`) VALUES
 (1, 'egg', 1, 'egg', 150),
 (2, 'milk', 1, 'cup', 0),
 (3, 'flour', 1000, 'gram\r\n                                            ', 0),
 (4, 'onions', 1, 'onion', 0),
 (5, 'paprika', 1, 'paprika', 0),
-(6, 'water', 1, 'cup', 0);
+(6, 'water', 1, 'cup', 0),
+(7, 'test', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -104,18 +105,20 @@ CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `logins` int(255) NOT NULL,
+  `last_login` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'test1', 'test@wifi.local', 'test1234!!'),
-(3, 'User2', 'user2@wifi.local', 'test1234!!'),
-(4, 'User3', 'user3@wifi.local', 'test1234!!'),
-(6, 'User22', 'user22@wifi.local', 'somerandomlongpassword');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `logins`, `last_login`) VALUES
+(1, 'test1', 'test@wifi.local', '$2y$10$fNRCDawUtNaVfP0YO3oXUe5o9cpNTLwlKhMYD8EpCMtiNpXq5VpJa', 24, '2024-03-15 19:38:52.000000'),
+(3, 'User2', 'user2@wifi.local', '$2y$10$fNRCDawUtNaVfP0YO3oXUe5o9cpNTLwlKhMYD8EpCMtiNpXq5VpJa', 2, '2024-03-15 17:59:11.000000'),
+(4, 'User3', 'user3@wifi.local', '$2y$10$fNRCDawUtNaVfP0YO3oXUe5o9cpNTLwlKhMYD8EpCMtiNpXq5VpJa', 0, NULL),
+(6, 'User22', 'user22@wifi.local', '$2y$10$wX7N/UMCRHZHF1tsMFLMlONKUpSSU/EA7x8M6OoshZZyqA30bB4Iu', 0, NULL);
 
 --
 -- Indizes der exportierten Tabellen
@@ -158,7 +161,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `ingredients_for_recipes`
