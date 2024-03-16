@@ -2,9 +2,6 @@
     include "functions.php";
 
     if (!empty($_POST)){
-        #echo "<pre>";
-        #print_r($_POST);
-        #echo "</pre>";
 
         if(empty($_POST["username"]) || empty($_POST["password"])) {
             $error = "username, password must be filled!";
@@ -12,15 +9,11 @@
             # prevents sql injection
             $sql_username = escape($_POST["username"]);
             
-            $sql_query = "SELECT * FROM users WHERE username = '{$sql_name}'";
-            $result = mysqli_query($con, $sql_query);
-
-            #echo "<pre>";
-            #print_r($result);
-            #echo "</pre>";
+            $sql_query = "SELECT * FROM users WHERE username = '{$sql_username}'";
+            $result = query($sql_query) # same as below
+            #$result = mysqli_query($con, $sql_query);
 
             $row =  mysqli_fetch_assoc($result);
-            #print_r($row);
 
             if ($row) {
                 if(password_verify($_POST["password"], $row["password"])){
@@ -31,7 +24,9 @@
 
                           $current_datetime = date("Y-m-d H:i:s"); #9999-12-31 23:59:59.999999
                           $logins_sql_query =  "UPDATE users SET logins = logins + 1, last_login = '{$current_datetime}' WHERE id = {$row["id"]}";
-                          mysqli_query($con, $logins_sql_query);
+
+                          query($logins_sql_query); # same as below
+                          #mysqli_query($con, $logins_sql_query);
 
                           header("Location: index.php");
                           echo '<div class="alert alert-success" role="alert">

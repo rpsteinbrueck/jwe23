@@ -2,16 +2,18 @@
 <h1>Ingredients</h1>
 
 <?php
-    $result = mysqli_query($con, "SELECT * FROM ingredients ORDER BY name ASC");
-    #print_r($result);
+    $result = query("SELECT * FROM ingredients ORDER BY name ASC"); # same as below
+    #$result = mysqli_query($con, "SELECT * FROM ingredients ORDER BY name ASC");
 
-    echo "<table>";
+    echo '<table style="table-layout:fixed">';
+    echo '<col width="150px" /><col width="150px" /><col width="150px" /><col width="150px" /><col width="70px" />';
     echo "<thread>";
     echo "<tr>";
     echo "<th>Name</th>";
-    echo "<th>ckal/100g</th>";
+    echo "<th>kcal</th>";
     echo "<th>Amount</th>";
     echo "<th>Unit</th>";
+    echo "<th>Modify</th>";
     echo "</tr>";
     echo "</thread>";
     echo "<tbody>";
@@ -21,6 +23,7 @@
         echo "<td>{$row["kcal"]}</td>";
         echo "<td>{$row["amount"]}</td>";
         echo "<td>{$row["unit"]}</td>";
+        echo '<td><a href="?site=ingredients_edit&id=' . $row["id"] . '">Edit</a></td>';
         echo "</tr>";
     }
     echo "</tbody>";

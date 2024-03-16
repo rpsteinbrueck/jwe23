@@ -19,5 +19,12 @@ function is_logged_in() {
 function escape($post_var) {
     global $con;
     return mysqli_real_escape_string($con, $post_var);
-} 
+}
+
+function query($sql_query) {
+    global $con;
+    $result = mysqli_query($con, $sql_query);
+
+    return $result;
+}
 ?>

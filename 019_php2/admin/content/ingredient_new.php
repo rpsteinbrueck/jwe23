@@ -1,44 +1,67 @@
 <?php
 
-$error =  array();
+$errors =  array();
+$error = "";
+$warnings = array();
+$warning = "";
 
 if (!empty($_POST)) {
-    $sql_name = escape($_POST["name"]);
-    $sql_kcal = escape($_POST["ckal"]);
-    $sql_amount = escape($_POST["amount"]);
-    $sql_unit = escape($_POST["unit"]);
+    $sql_name = strtolower(escape($_POST["name"]) );
+    $sql_kcal = strtolower(escape($_POST["kcal"]));
+    $sql_amount = strtolower(escape($_POST["amount"]));
+    $sql_unit = strtolower(escape($_POST["unit"]));
 
     if (empty($sql_name)) {
-        array_push($error, "name");
+        array_push($errors, "name");
     } 
-    if (empty($sql_ckal)) {
-        array_push($error, "ckal");
+    if (empty($sql_kcal)) {
+        array_push($warnings, "kcal");
+        $sql_kcal =  "NULL";
     } 
     if (empty($sql_amount)) {
-        array_push($error, "amount");
+        array_push($errors, "amount");
     } 
     if (empty($sql_unit)) {
-        array_push($error, "unit");
+        array_push($errors, "unit");
     }
 
-    $sql_query = "SELECT * FROM ingredients WHERE name = '{$sql_name}'";
-    $result = mysqli_query($con, $sql_query);
-    $row =  mysqli_fetch_assoc($result);
-    if (!$row) {
-        $sql_insert = "INSERT INTO ingredients (name, amount, unit, kcal) VALUES ('{$sql_name}', '{$sql_kcal}', '{$sql_amount}', '{$sql_unit}');";
-        $result = mysqli_query($con, $sql_insert);
-    } else {
-        echo $row["name"] . "already exists!";
+    if (!count($errors) > 0 ) {
+        $sql_query = "SELECT * FROM ingredients WHERE name = '{$sql_name}'";
+        $result = query($sql_query); # same as below
+        #$result = mysqli_query($con, $sql_query);
+
+        $row =  mysqli_fetch_assoc($result);
+        if (!$row) {
+            $sql_insert = "INSERT INTO ingredients (name, amount, unit, kcal) VALUES ('{$sql_name}', '{$sql_amount}', '{$sql_unit}', '{$sql_kcal}');";
+            $result = query($sql_insert); # same as below
+            #$result = mysqli_query($con, $sql_insert);
+
+            $success = $sql_name . " was added to ingredients";
+
+            unset($_POST);
+        } else {
+            $error = $row["name"] . " already exists!";
+        }
     }
-} else {
-    array_push($error, "name", "kcal", "amount", "unit");
 }
 ?>
 <div class="login_form">
         <h1>add new ingredient</h1>
         <?php
-            if (!empty($error)){
-                echo '<div class="alert alert-danger" role="alert">Please fill in the following: ' . implode(", ", $error) . "</div>";
+            if (!empty($errors)){
+                echo '<div class="alert alert-danger" role="alert">Please fill in the following: ' . implode(", ", $errors) . "</div>";
+            }
+
+            if(!empty($error)) {
+                echo '<div class="alert alert-danger" role="alert">' . $error . "</div>";
+            }
+
+            if(!empty($warnings)) {
+                echo '<div class="alert alert-warning" role="alert">The following will be added with the value NULL if not filled: ' . implode(", ", $warnings) . "</div>";
+            }
+
+            if(!empty($success)) {
+                echo '<div class="alert alert-success" role="alert">' . $success . "</div>";
             }
         ?>
         <form action="?site=ingredient_new" method="post">
@@ -66,8 +89,13 @@ if (!empty($_POST)) {
                 <?php if (!empty($_POST['unit'])) {echo "value=" . htmlspecialchars($_POST['unit']);}?>>
             </div>
             <br>
-            <div>
-                <button class="btn btn-success login-button">add</button>
+            <div class="button_section" style= "display: flex; justify-content: space-between;">
+                <div>
+                    <button class="btn btn-success login-button" type="submit">add</button>
+                </div>
+                <div>
+                    <button class="btn btn-success login-button" ><a href="?site=ingredients_list">back</a></button>
+                </div>
             </div>
         </form>
     </div>

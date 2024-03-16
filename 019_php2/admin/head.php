@@ -9,6 +9,10 @@
             href="../../vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css"
         />
     <style>
+        nav > .options > a {
+            color: white;
+        }
+
         main {
             padding: 50px;
             display: flex;
@@ -29,11 +33,16 @@
         }
 
         .option1 {
-            width: 200px;
+            width: 300px;
         }
 
         h1 {
             margin-bottom: 50px;
+        }
+
+        btn,
+        button > a {
+            color: white;
         }
 
         a {
@@ -69,6 +78,7 @@
         <div class="options option1">
             <a href="?site=home">Home</a>
             <a href="?site=ingredients_list">Ingredients</a>
+            <a href="?site=recipe_list">Recipes</a>
         </div>
         <div class="options option2">
             <a href="#">logged in as: <?php echo $_SESSION["username"]; ?></a>

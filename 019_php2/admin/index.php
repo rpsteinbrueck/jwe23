@@ -20,6 +20,15 @@ if (empty($_GET["site"])) {
   } else if ($site == "ingredient_new") {
     $content = "content/ingredient_new.php";
     $title = "new ingredient";
+  } else if ($site == "ingredients_edit") {
+    $content = "content/ingredients_edit.php";
+    $title = "Edit ingredient";
+  } else if ($site == "recipe_list") {
+    $content = "content/recipe_list.php";
+    $title = "recipes";
+  } else if ($site == "recipe_new") {
+    $content = "content/recipe_new.php";
+    $title = "new recipe";
   } else {
     // site gibt's bei uns nicht -> error 404 ausgeben
     header("HTTP/1.0 404 Not Found"); // für Suchmaschine
@@ -28,7 +37,6 @@ if (empty($_GET["site"])) {
   }
 
 include "head.php";
-#print_r($_GET);
 include $content;
 include "footer.php";
 ?>
