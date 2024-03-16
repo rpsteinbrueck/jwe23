@@ -27,7 +27,7 @@ if ($row) { ?>
     $row = mysqli_fetch_assoc($result);
     
     if (!empty($_GET["remove"])) {
-        $sql_delete = "DELETE * FROM ingredients WHERE id = '{$sql_id}';";
+        $sql_delete = "DELETE FROM ingredients WHERE id = '{$sql_id}';";
         query($sql_delete);
         $success = $row["name"] . "has been removed";
     } 
