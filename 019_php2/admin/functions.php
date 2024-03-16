@@ -24,7 +24,6 @@ function escape($post_var) {
 function query($sql_query) {
     global $con;
     $result = mysqli_query($con, $sql_query);
-
     return $result;
 }
 ?>

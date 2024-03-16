@@ -13,6 +13,9 @@ if (!empty($_POST)) {
     } 
     if (empty($sql_description)) {
         array_push($errors, "description");
+    }
+    if (empty($sql_user_id)) {
+        array_push($errors, "user_id");
     } 
 
     if (!count($errors) > 0 ) {
@@ -20,7 +23,7 @@ if (!empty($_POST)) {
         $result = query($sql_query); # same as below
         #$result = mysqli_query($con, $sql_query);
 
-        $row =  mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
         if (!$row) {
             $sql_insert = "INSERT INTO recipes (title, description, user_id) VALUES ('{$sql_title}', '{$sql_description}', '{$sql_user_id}');";
             $result = query($sql_insert); # same as below
@@ -54,13 +57,12 @@ if (!empty($_POST)) {
             <div>
                 <label for="title">title</label>
                 <input type="text" title="title" id="title" class="form-control"
-                <?php if (!empty($_POST['title'])) {echo "value=" . htmlspecialchars($_POST['title']);}?>>
+                value="<?php if (!empty($_POST['title'])) {echo "value=" . htmlspecialchars($_POST['title']);}?>">
             </div>
             <br>
             <div>
                 <label for="description">description</label>
-                <textarea type="description" title="description" id="description" class="form-control" rows="5"
-                <?php if (!empty($_POST['description'])) {echo "value=" . htmlspecialchars($_POST['description']);}?>></textarea>
+                <textarea type="description" title="description" id="description" class="form-control" rows="5"><?php if (!empty($_POST['description'])) {echo "value=" . htmlspecialchars($_POST['description']);}?></textarea>
             </div>
             <br>
             <div class="button_section" style= "display: flex; justify-content: space-between;">
@@ -68,7 +70,7 @@ if (!empty($_POST)) {
                     <button class="btn btn-success login-button" type="submit">add</button>
                 </div>
                 <div>
-                    <button class="btn btn-success login-button" ><a href="?site=recipe_list">back</a></button>
+                    <a href="?site=ingredients_list" class="btn btn-success login-button">back</a>
                 </div>
             </div>
         </form>

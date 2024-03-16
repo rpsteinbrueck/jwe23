@@ -9,9 +9,9 @@
             # prevents sql injection
             $sql_username = escape($_POST["username"]);
             
-            $sql_query = "SELECT * FROM users WHERE username = '{$sql_username}'";
-            $result = query($sql_query) # same as below
-            #$result = mysqli_query($con, $sql_query);
+            $sql_query_user = "SELECT * FROM users WHERE username = '{$sql_username}'";
+            $result = query($sql_query_user); # same as below
+            #$result = mysqli_query($con, $sql_query_user);
 
             $row =  mysqli_fetch_assoc($result);
 

@@ -94,7 +94,7 @@ if (!empty($_POST)) {
                     <button class="btn btn-success login-button" type="submit">add</button>
                 </div>
                 <div>
-                    <button class="btn btn-success login-button" ><a href="?site=ingredients_list">back</a></button>
+                    <a href="?site=ingredients_list" class="btn btn-success login-button">back</a>
                 </div>
             </div>
         </form>

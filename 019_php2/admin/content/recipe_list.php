@@ -6,12 +6,13 @@
     #$result = mysqli_query($con, "SELECT * FROM ingredients ORDER BY name ASC");
 
     echo '<table style="table-layout:fixed">';
-    echo '<col width="150px" /><col width="250px" /><col width="150px" />';
+    echo '<col width="150px" /><col width="250px" /><col width="150px" /><col width="60px" />';
     echo "<thread>";
     echo "<tr>";
     echo "<th>title</th>";
     echo "<th>description</th>";
     echo "<th>userid</th>";
+    echo "<th>modify</th>";
     echo "</tr>";
     echo "</thread>";
     echo "<tbody>";
@@ -20,6 +21,7 @@
         echo "<td>{$row["title"]}</td>";
         echo "<td>{$row["description"]}</td>";
         echo "<td>{$row["user_id"]}</td>";
+        echo '<td><a href="?site=recipe_edit&id=' . $row["id"] . '">Edit</a></td>';
         echo "</tr>";
     }
     echo "</tbody>";

@@ -23,11 +23,17 @@ if (empty($_GET["site"])) {
   } else if ($site == "ingredients_edit") {
     $content = "content/ingredients_edit.php";
     $title = "Edit ingredient";
+  } else if ($site == "ingredients_remove") {
+    $content = "content/ingredients_remove.php";
+    $title = "Remove ingredient";
   } else if ($site == "recipe_list") {
     $content = "content/recipe_list.php";
     $title = "recipes";
   } else if ($site == "recipe_new") {
     $content = "content/recipe_new.php";
+    $title = "new recipe";
+  } else if ($site == "recipe_edit") {
+    $content = "content/recipe_edit.php";
     $title = "new recipe";
   } else {
     // site gibt's bei uns nicht -> error 404 ausgeben

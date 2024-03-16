@@ -6,7 +6,7 @@
     #$result = mysqli_query($con, "SELECT * FROM ingredients ORDER BY name ASC");
 
     echo '<table style="table-layout:fixed">';
-    echo '<col width="150px" /><col width="150px" /><col width="150px" /><col width="150px" /><col width="70px" />';
+    echo '<col width="150px" /><col width="150px" /><col width="150px" /><col width="150px" /><col width="70px" /><col width="70px" />';
     echo "<thread>";
     echo "<tr>";
     echo "<th>Name</th>";
@@ -14,6 +14,7 @@
     echo "<th>Amount</th>";
     echo "<th>Unit</th>";
     echo "<th>Modify</th>";
+    echo "<th>Remove</th>";
     echo "</tr>";
     echo "</thread>";
     echo "<tbody>";
@@ -24,6 +25,7 @@
         echo "<td>{$row["amount"]}</td>";
         echo "<td>{$row["unit"]}</td>";
         echo '<td><a href="?site=ingredients_edit&id=' . $row["id"] . '">Edit</a></td>';
+        echo '<td style="display: flex; justify-content: center; align-items: center;"><a href="?site=ingredients_remove&id=' . $row["id"] . '"><img src="static/img/trash.svg"></a></td>';
         echo "</tr>";
     }
     echo "</tbody>";
