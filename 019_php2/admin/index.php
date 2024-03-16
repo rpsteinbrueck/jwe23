@@ -10,7 +10,6 @@ if (empty($_GET["site"])) {
     $site = $_GET["site"];
   }
   
-  // Prüfen, ob in $site ein gültiger Wert steht (nicht manipuliert)
   if ($site == "home") {
     $content = "content/home.php";
     $title = "home";

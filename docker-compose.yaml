@@ -1,0 +1,69 @@
+---
+version: "3.1"
+
+x-mariadb-config: &mariadb-config
+    MARIADB_DATABASE: php2
+    MARIADB_ROOT_PASSWORD: abc123
+    MARIADB_USER: alpha
+    MARIADB_PASSWORD: abc123
+
+x-adminer-config: &adminer-config
+    ADMINER_DEFAULT_DB_DRIVER: mysql
+    ADMINER_DEFAULT_DB_HOST: db
+    ADMINER_DEFAULT_DB_NAME: php2
+    ADMINER_DESIGN: nette
+    ADMINER_PLUGINS: tables-filter tinymce
+
+networks:
+    jwe23:
+        driver: bridge
+
+services:
+    web:
+        image: nginx:alpine
+        #depends_on:
+        #    - db
+        restart: always
+        ports:
+            - "9080:80"
+        networks:
+            - jwe23
+        volumes:
+            - ./container/web/configs/nginx/:/etc/nginx/conf.d
+            - ./:/var/www/html/
+            - ./data/logs/nginx:/var/log/nginx/
+
+    php:
+        #image: php:fpm-alpine
+        build: container/php/
+        depends_on:
+            - db
+        restart: always
+        #environment: *php-config
+        networks:
+            - jwe23
+        volumes:
+            - ./:/var/www/html/
+            - ./data/logs/php.log:/var/log/fpm-php.www.log
+
+    db:
+        image: mariadb:latest
+        restart: always
+        environment: *mariadb-config
+        ports:
+            - 3306:3306
+        networks:
+            - jwe23
+        volumes:
+            - ./data/db:/var/lib/mysql
+
+    adminer:
+        image: adminer:latest
+        depends_on:
+            - db
+        restart: always
+        environment: *adminer-config
+        ports:
+            - 9081:8080
+        networks:
+            - jwe23
