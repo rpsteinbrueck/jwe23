@@ -24,8 +24,8 @@
         echo "<td>{$row["kcal"]}</td>";
         echo "<td>{$row["amount"]}</td>";
         echo "<td>{$row["unit"]}</td>";
-        echo '<td><a href="?site=ingredients_edit&id=' . $row["id"] . '">Edit</a></td>';
-        echo '<td style="display: flex; justify-content: center; align-items: center;"><a href="?site=ingredients_remove&id=' . $row["id"] . '"><img src="static/img/trash.svg"></a></td>';
+        echo '<td><a class="center_me"  href="?site=ingredients_edit&id=' . $row["id"] . '"><img src="static/img/pencil.svg"></a></td>';
+        echo '<td><a class="center_me"  href="?site=ingredients_remove&id=' . $row["id"] . '"><img src="static/img/trash.svg"></a></td>';
         echo "</tr>";
     }
     echo "</tbody>";

@@ -34,6 +34,9 @@ if (empty($_GET["site"])) {
   } else if ($site == "recipe_edit") {
     $content = "content/recipe_edit.php";
     $title = "new recipe";
+  } else if ($site == "recipe_remove") {
+    $content = "content/recipe_remove.php";
+    $title = "Remove recipe";
   } else {
     // site gibt's bei uns nicht -> error 404 ausgeben
     header("HTTP/1.0 404 Not Found"); // für Suchmaschine

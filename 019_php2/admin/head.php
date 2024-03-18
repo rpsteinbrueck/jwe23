@@ -66,6 +66,12 @@
             padding-top: 100px;
         }
 
+        .center_me {
+            display: flex;
+            justify-content: center;
+            align-items: center;"
+        }
+
         /*@media (min-width: 1800px) {
             body {
                 padding: 100px;
@@ -77,8 +83,8 @@
     <nav class="navbar navbar-light" style="background-color: #116969;">
         <div class="options option1">
             <a href="?site=home">Home</a>
-            <a href="?site=ingredients_list">Ingredients</a>
             <a href="?site=recipe_list">Recipes</a>
+            <a href="?site=ingredients_list">Ingredients</a>
         </div>
         <div class="options option2">
             <a href="#">logged in as: <?php echo $_SESSION["username"]; ?></a>
