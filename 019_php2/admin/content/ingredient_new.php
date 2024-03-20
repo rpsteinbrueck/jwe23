@@ -51,15 +51,12 @@ if (!empty($_POST)) {
             if (!empty($errors)){
                 echo '<div class="alert alert-danger" role="alert">Please fill in the following: ' . implode(", ", $errors) . "</div>";
             }
-
             if(!empty($error)) {
                 echo '<div class="alert alert-danger" role="alert">' . $error . "</div>";
             }
-
             if(!empty($warnings)) {
                 echo '<div class="alert alert-warning" role="alert">The following will be added with the value NULL if not filled: ' . implode(", ", $warnings) . "</div>";
             }
-
             if(!empty($success)) {
                 echo '<div class="alert alert-success" role="alert">' . $success . "</div>";
             }

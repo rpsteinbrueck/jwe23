@@ -3,12 +3,13 @@
 $errors =  array();
 $error = "";
 
+print_r($_POST);
+
 if (!empty($_POST)) {
     $sql_title = strtolower(escape($_POST["title"]) );
     $sql_description = escape($_POST["description"]);
     $session_user = $_SESSION["username"];
     $sql_user_id = query("SELECT id FROM users WHERE username = '{$session_user}';");
-    echo $sql_user_id;
 
     if (empty($sql_title)) {
         array_push($errors, "title");
@@ -18,10 +19,10 @@ if (!empty($_POST)) {
     }
     if (empty($sql_user_id)) {
         array_push($errors, "user_id");
-    } 
+    }
 
     if (!count($errors) > 0 ) {
-        $sql_query = "SELECT * FROM recipes WHERE title = '{$sql_title}'";
+        $sql_query = "SELECT * FROM recipes WHERE title = '{$sql_title}';";
         $result = query($sql_query); # same as below
         #$result = mysqli_query($con, $sql_query);
 
@@ -32,7 +33,7 @@ if (!empty($_POST)) {
             #$result = mysqli_query($con, $sql_insert);
 
             $success = "Recipe " . $sql_title . " was added";
-            unset($_POST);
+            #unset($_POST);
         } else {
             $error = $row["title"] . " already exists!";
         }
@@ -45,11 +46,9 @@ if (!empty($_POST)) {
             if (!empty($errors)){   
                 echo '<div class="alert alert-danger" role="alert">Please fill in the following: ' . implode(", ", $errors) . "</div>";
             }
-
             if(!empty($error)) {
                 echo '<div class="alert alert-danger" role="alert">' . $error . "</div>";
             }
-
             if(!empty($success)) {
                 echo '<div class="alert alert-success" role="alert">' . $success . "</div>";    
             }
@@ -63,7 +62,7 @@ if (!empty($_POST)) {
             <br>
             <div>
                 <label for="description">description</label>
-                <textarea type="description" title="description" id="description" class="form-control" rows="5"><?php if (!empty($_POST['description'])) { echo "value=" . htmlspecialchars($_POST['description']);}?></textarea>
+                <textarea type="description" title="description" id="description" class="form-control" rows="5" value="<?php if (!empty($_POST['description'])) { echo "value=" . htmlspecialchars($_POST['description']);}?>"></textarea>
             </div>
             <br>
             <div class="button_section" style= "display: flex; justify-content: space-between;">
