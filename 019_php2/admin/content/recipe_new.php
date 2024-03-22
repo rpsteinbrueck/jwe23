@@ -34,7 +34,7 @@ if (!empty($_POST)) {
             #$result = mysqli_query($con, $sql_insert);
 
             $success = "Recipe " . $sql_title . " was added";
-            #unset($_POST);
+            unset($_POST);
         } else {
             $error = $row["title"] . " already exists!";
         }
