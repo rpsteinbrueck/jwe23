@@ -31,4 +31,4 @@
     echo "</table>";
 ?>
 
-<button class="btn btn-success" style="margin-top: 50px;"><a href="?site=recipe_new">Add recipe</a></button>
+<a  class="btn btn-success" style="margin-top: 50px;" href="?site=recipe_new">Add recipe</a>

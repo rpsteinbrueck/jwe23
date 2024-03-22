@@ -3,8 +3,8 @@
 session_start();
 
 # db connection
-#$con = mysqli_connect("localhost", "root", "", "php2");
-$con = mysqli_connect("db:3306", "root", "abc123", "php2");
+$con = mysqli_connect("localhost", "root", "", "php2");
+#$con = mysqli_connect("db:3306", "root", "abc123", "php2");
 
 # notify mysqli that we are using utf-8
 mysqli_set_charset($con, "utf8");
