@@ -5,10 +5,7 @@ $error = "";
 $warnings = array();
 $warning = "";
 
-$ingredients = query("SELECT id,name FROM ingredients ORDER BY ingredients.name ASC;");
-$ingredients_rows = mysqli_fetch_assoc($ingredients);
-
-print_r($_POST);
+print_r($_POST);    
 
 if (!empty($_POST)) {
     $sql_title = strtolower(escape($_POST["title"]) );
@@ -25,9 +22,6 @@ if (!empty($_POST)) {
     }
     if (empty($sql_user_id)) {
         array_push($errors, "user_id");
-    }
-    if (empty($sql_description)) {
-        array_push($errors, "description");
     }
 
     if (!count($errors) > 0) {
@@ -82,15 +76,37 @@ if (!empty($_POST)) {
             <label for="description">description</label>
             <textarea name="description" id="description" class="form-control" rows="5"><?php if (!empty($_POST['description'])) { echo htmlspecialchars($_POST['description']);} ?></textarea>
         </div>
-        <div>
-            <p></p>ingredients:</p>
+        <br>
+        <div class="ingredients_list">
+            <p>ingredients list:</p>
             <?php
-                while ($i = mysqli_fetch_assoc($ingredients)) {
-                    echo '<input type="checkbox" class="form-check-input" name="ingredients_arr[]" value="' . $i["id"] . '">';
-                    echo '<label for="ingredients_arr[]">' . $i["name"] . '</label><br>';
-                }
-            ?>
+                #$ingredients_result = query("SELECT * FROM ingredients ORDER BY name ASC");
+                #while ($i = mysqli_fetch_assoc($ingredients_result)) {
+                #    #if (in_array($sql_ingredentiens_arr,$i)) {
+                #    #    $check = 'checked="checked"';
+                #    #} else {
+                #    #    $check = "";
+                #    #}
+                #    echo '<input type="checkbox" class="form-check-input" name="ingredients_arr[]" value="' . $i["id"] . '">';
+                #    echo '<label for="ingredients_arr[]">' . $i["name"] . '</label><br>';
+                #}
+            ?>      
+                <div class="ingredients_block">
+                <?php
+                        echo '<select class="form-select" name="ingredients_arr[]" id="ingredients_arr[]" >';
+                        echo '<option>---Please select ingredient---</option>';
+                        $ingredient_result = query("SELECT * FROM ingredients ORDER BY name ASC");
+                        while ($i = mysqli_fetch_assoc($ingredient_result)) {
+                            echo "<option value='{$i["id"]}'";
+                            echo ">{$i["name"]}</option>";
+                        }
+                        echo "</select>"
+                    ?>
+                </div>            
+
         </div>
+        <a href="#" class="btn btn-success" onclick="newIngredient();">+</a>
+        <br>
         <br>
         <div class="button_section" style= "display: flex; justify-content: space-between;">
             <div>
@@ -102,3 +118,4 @@ if (!empty($_POST)) {
         </div>
     </form>
 </div>
+<script src="static/js/new_ingredient.js"></script>

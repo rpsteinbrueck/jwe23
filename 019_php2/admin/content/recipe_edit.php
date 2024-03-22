@@ -52,8 +52,6 @@ if (!empty($_POST)) {
     }
 }
 
-
-print_r($row);
 ?>
 <div class="login_form">
         <h1>Edit ingredient</h1>
