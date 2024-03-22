@@ -3,6 +3,7 @@ $errors =  array();
 $error = "";
 $warnings = array();
 $warning = "";
+$been_removed = false; 
 
 $sql_id = $_GET["id"];
 
@@ -30,6 +31,7 @@ if ($row) { ?>
         $sql_delete = "DELETE FROM ingredients WHERE id = '{$sql_id}';";
         query($sql_delete);
         $success = $row["name"] . "has been removed";
+        $been_removed = true; 
     } 
     if(empty($row)) { ?>
     <h2>Ingredient does not exists</h2>
@@ -51,12 +53,22 @@ if ($row) { ?>
         if(!empty($success)) {
             echo '<div class="alert alert-success" role="alert">' . $success . "</div>";
         } ?>
-    <h2>Are you sure you want to remove <?php echo $row["name"]?></h2>
+    <?php
+        if (!$been_removed == true) {?> 
+            <h2>Are you sure you want to remove <?php echo $row["name"]?></h2>
+        <?php }?>
     <br>
     <div class="button_section" style= "display: flex; justify-content: space-between; width: 300px; margin-top: 100px;">
-        <div>
-            <a href="?site=ingredients_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit">Remove</a>
-        </div>
+        <?php
+            if (!$been_removed == true) {?>
+            <div>
+                <a href="?site=ingredients_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit">Remove</a>
+            </div>
+        <?php } else {?>
+            <div>
+                <a href="?site=ingredients_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit" hidden>Remove</a>
+            </div>
+        <?php }?>
         <div>
             <a href="?site=ingredients_list" class="btn btn-success login-button">back</a>
         </div>

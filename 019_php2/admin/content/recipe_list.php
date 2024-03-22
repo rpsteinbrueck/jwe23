@@ -4,7 +4,7 @@
     # method 2
     #$result = query("SELECT * FROM recipes ORDER BY title ASC"); # same as below
 
-    $result = query("SELECT recipes.*, users.username FROM recipes JOIN users ON recipes.user_id = users.id ORDER BY recipes.title ASC;");
+    $result = query("SELECT recipes.*, users.username FROM recipes LEFT JOIN users ON recipes.user_id = users.id ORDER BY recipes.title ASC;");
 
     echo '<table style="table-layout:fixed">';
     echo '<col width="150px" /><col width="250px" /><col width="150px" /><col width="70px" /><col width="70px" />';

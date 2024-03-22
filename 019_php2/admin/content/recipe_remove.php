@@ -3,8 +3,10 @@ $errors =  array();
 $error = "";
 $warnings = array();
 $warning = "";
+$been_removed = false; 
 
 $sql_id = $_GET["id"];
+
 
 ?>  
 <h1>Remove Recipe</h1>
@@ -16,6 +18,7 @@ $sql_id = $_GET["id"];
         $sql_delete = "DELETE FROM recipes WHERE id = '{$sql_id}';";
         query($sql_delete);
         $success = $row["title"] . "has been removed";
+        $been_removed = true;  
     } 
     if(empty($row)) { ?>
     <h2>Recipe does not exists</h2>
@@ -40,9 +43,12 @@ $sql_id = $_GET["id"];
     <h2>Are you sure you want to remove <?php echo $row["title"]?></h2>
     <br>
     <div class="button_section" style= "display: flex; justify-content: space-between; width: 300px; margin-top: 100px;">
-        <div>
-            <a href="?site=recipe_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit">Remove</a>
-        </div>
+        <?php
+            if (!$been_removed == true) {?>
+                <div>
+                    <a href="?site=recipe_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit">Remove</a>
+                </div>
+        <?php } ?>
         <div>
             <a href="?site=recipe_list" class="btn btn-success login-button">back</a>
         </div>
