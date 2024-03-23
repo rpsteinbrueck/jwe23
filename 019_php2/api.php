@@ -84,8 +84,6 @@ if ($parameter[0] == "ingredients") {
                               ORDER BY ingredients_for_recipes.id;");
             $output["ingredients"] = array();
 
-
-
             echo json_encode($output);
             exit;
         }
