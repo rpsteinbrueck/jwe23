@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 23. Mrz 2024 um 15:10
+-- Erstellungszeit: 23. Mrz 2024 um 15:18
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -76,17 +76,10 @@ CREATE TABLE `passagiere` (
 --
 
 INSERT INTO `passagiere` (`id`, `vorname`, `nachname`, `geburtsdatum`, `flugangst`, `flug_id`) VALUES
-(8, '1231452352', '123123123', '2024-03-11', 0, 11),
-(9, '123', '14124', '2024-03-02', 0, 13),
-(12, '1234', '1231111', '2024-02-27', 0, 10),
-(14, '1231111', '1233333', '2024-03-14', 0, 10),
-(15, '562243234', '23423452356', '2024-03-01', 1, 10),
-(16, '12314', '12314', '2024-03-19', 0, 10),
-(17, 'test', 'test', '2024-03-04', 0, 13),
-(20, 'test111111111', 'test', '2024-02-29', 1, 9),
-(21, 'test11112345562346457457', '1234', '2024-03-01', 0, 10),
-(22, 'test11111111', '12314124', '2024-03-03', 1, 10),
-(23, 'hello', 'gello', '2024-03-08', 1, 14);
+(25, 'stanley', 'st', '1980-11-01', 0, 14),
+(26, 'mr', 'banning', '1992-03-06', 0, 10),
+(27, 'foo', 'bar', '1992-03-07', 1, 10),
+(28, 'felix', 'stellar', '1990-03-01', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -140,7 +133,7 @@ ALTER TABLE `fluege`
 -- AUTO_INCREMENT für Tabelle `passagiere`
 --
 ALTER TABLE `passagiere`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT für Tabelle `passagiere_zu_fluege`
