@@ -1,0 +1,36 @@
+##############################################################################################
+#
+# REASON: SQL QUERIES EXECUTED DURING THE EXAM
+# DATE: 23.03.2024
+#
+#
+##############################################################################################
+
+
+####################################################################
+# create table passagiere with foreign key "flug id"
+####################################################################
+
+CREATE TABLE passagiere (
+    id int(10) UNSIGNED AUTO_INCREMENT,
+    vorname varchar(100) NOT NULL,
+    nachname varchar(100) NOT NULL,
+    geburtsdatum date,
+    flugangst boolean not null default 0,
+    flug_id int(10) UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (flug_id) REFERENCES fluege(id)
+); 
+
+
+####################################################################
+# create table passagiere_zu_fluege n to m relationship
+####################################################################
+CREATE TABLE passagiere_zu_fluege (
+    id int(10) AUTO_INCREMENT,
+    flug_id int(10) UNSIGNED,
+    passagier_id int(10) UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (flug_id) REFERENCES fluege(id),
+    FOREIGN KEY (passagier_id) REFERENCES passagiere(id)
+); 
