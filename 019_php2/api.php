@@ -59,6 +59,39 @@ if ($parameter[0] == "ingredients") {
     exit;
 
 } elseif ($parameter[0] == "recipes") {
+
+    if (!empty($parameter[1])){
+        # give id with
+        $output = array(
+            "status" => 1, 
+            "result" => array()
+        );
+
+        $sql_recipe_id = escape($parameter[1]);
+        $result = query("SELECT * FROM recipes WHERE id = '{$sql_recipe_id}';");
+        $recipe = mysqli_fetch_assoc($result);
+        if(!$recipe) {
+            error("recipe does not exist");
+        } else {
+            $output["result"] = $recipe;
+
+            $result = query("SELECT id,username,email FROM users where id = '{$recipe["user_id"]}'");
+            $output["user"] =  mysqli_fetch_assoc($result);
+
+            $result =  query("SELECT ingredients.* FROM ingredients_for_recipes 
+                              JOIN ingredients ON ingredients_for_recipes.ingredients_id = ingredients.id
+                              WHERE ingredients_for_recipes.recipes_id = '{$sql_recipe_id}'
+                              ORDER BY ingredients_for_recipes.id;");
+            $output["ingredients"] = array();
+
+
+
+            echo json_encode($output);
+            exit;
+        }
+    }
+
+
     # retrieve list of all ingredients
     $output = array(
         "status" => 1, 
@@ -72,6 +105,8 @@ if ($parameter[0] == "ingredients") {
 
     echo json_encode($output);
     exit;
+} else {
+    error("The method '{$paramter[0]}', does not exist");
 }
 
 ?>
