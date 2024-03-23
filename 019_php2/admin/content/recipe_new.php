@@ -91,7 +91,7 @@ if (!empty($_POST)) {
                 #    echo '<label for="ingredients_arr[]">' . $i["name"] . '</label><br>';
                 #}
             ?>      
-                <div class="ingredients_block">
+                <div class="ingredients_block" style="display: flex;">
                 <?php
                         echo '<select class="form-select" name="ingredients_arr[]" id="ingredients_arr[]" >';
                         echo '<option>---Please select ingredient---</option>';
@@ -102,15 +102,16 @@ if (!empty($_POST)) {
                         }
                         echo "</select>"
                     ?>
+                    <a href="#" class="btn btn-dange" onclick="rmIngredient(this);"><img src="static/img/trash.svg" alt=""></a>
                 </div>            
 
         </div>
-        <a href="#" class="btn btn-success" onclick="newIngredient();">+</a>
+        <a href="#" class="btn btn-success" onclick="newIngredient();">add ingredient</a>
         <br>
         <br>
         <div class="button_section" style= "display: flex; justify-content: space-between;">
             <div>
-                <button class="btn btn-success login-button" type="submit">add</button>
+                <button class="btn btn-success login-button" type="submit">add recipe</button>
             </div>
             <div>
                 <a href="?site=recipe_list" class="btn btn-success login-button">back</a>
@@ -118,4 +119,4 @@ if (!empty($_POST)) {
         </div>
     </form>
 </div>
-<script src="static/js/new_ingredient.js"></script>
+<script src="static/js/ingredients.js"></script>

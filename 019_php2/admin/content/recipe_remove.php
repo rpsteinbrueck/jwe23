@@ -15,6 +15,9 @@ $sql_id = $_GET["id"];
     $row = mysqli_fetch_assoc($result);
     
     if (!empty($_GET["remove"])) {
+        $sql_delete_ntom = "DELETE FROM ingredients_for_recipes WHERE recipes_id = '{$sql_id}';";
+        query($sql_delete_ntom);
+        
         $sql_delete = "DELETE FROM recipes WHERE id = '{$sql_id}';";
         query($sql_delete);
         $success = $row["title"] . "has been removed";
@@ -47,6 +50,11 @@ $sql_id = $_GET["id"];
             if (!$been_removed == true) {?>
                 <div>
                     <a href="?site=recipe_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit">Remove</a>
+                </div>
+        <?php } else {
+            ?>
+                <div>
+                    <a href="?site=recipe_remove&id=<?php echo $row["id"]?>&remove=true" class="btn btn-danger login-button" type="submit" hidden>Remove</a>
                 </div>
         <?php } ?>
         <div>

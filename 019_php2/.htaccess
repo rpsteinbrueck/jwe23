@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /jwe23/019_php2
+rewriteRule ^\/?api\/? api.php
