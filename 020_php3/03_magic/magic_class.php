@@ -24,6 +24,12 @@ class magic {
         echo "</pre>";
     }
 
+    # default value given if an object is echo'd
+    public function __toString() {
+        return print_r($this->data, true);
+        #return "Some output the developer defined";
+    }
+
 }
 
 

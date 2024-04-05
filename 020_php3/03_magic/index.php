@@ -22,6 +22,7 @@ echo "<br>";
 
 $m->save("user01", 5, true, "some random parameter");
 
+echo $m;
 
 
 ?>
