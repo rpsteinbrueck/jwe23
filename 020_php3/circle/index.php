@@ -10,20 +10,35 @@ if (!empty($_POST)) {
     try {
         $circle = new circle($_POST["radius"]);
         $success = "Circle was calculated!";
-    } catch  (Exception $ex) {
+    } catch(Exception $ex) {
         $error = "Check the input!" . $ex->getMessage();
     } finally {
         echo "Here is the finally<br>";
     }
+
+    if (!$error && !$errors) {
+        echo "radius of the circle is " . $circle->get_radius() ;
+        echo "<br>";
+        echo "area of the circle is " . $circle->area() ;
+        echo "<br>";
+        echo "circumference of the circle is " . $circle->circumference() ;
+        echo "<br>";
+        echo "diameter of the circle is " . $circle->diameter() ;
+    }
+} else {
+    $circle = new circle(3);
 }
 
-if (!$error && !$errors) {
-    echo "area of the circle is " . $circle->area() ;
-    echo "<br>";
-    echo "circumference of the circle is " . $circle->circumference() ;
-    echo "<br>";
-    echo "diameter of the circle is " . $circle->diameter() ;
+if (!empty($errors)){   
+    echo '<div class="alert alert-danger" role="alert">Please fill in the following: ' . implode(", ", $errors) . "</div>";
 }
+if (!empty($error)) {
+    echo '<div class="alert alert-danger" role="alert">' . $error . "</div>";
+}
+if (!empty($success)) {
+    echo '<div class="alert alert-success" role="alert">' . $success . "</div>";  
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +65,7 @@ if (!$error && !$errors) {
 
         .circle {
             background-color: #DAF7A6;
-            border-radius: 100px;
+            border-radius: 100%;
             width: <?php echo $circle->get_radius() . "cm"; ?>;
             height: <?php echo $circle->get_radius() . "cm"; ?>;
 
@@ -63,20 +78,8 @@ if (!$error && !$errors) {
     <link rel="stylesheet" href="../../vendor/bootstrap-5.3.2-dist/css/bootstrap.min.css">
 </head>
 <body>
-    <?php  
-        if (!empty($errors)){   
-            echo '<div class="alert alert-danger" role="alert">Please fill in the following: ' . implode(", ", $errors) . "</div>";
-        }
-        if (!empty($error)) {
-            echo '<div class="alert alert-danger" role="alert">' . $error . "</div>";
-        }
-        if (!empty($success)) {
-            echo '<div class="alert alert-success" role="alert">' . $success . "</div>";  
-        }
-    ?>
     <div class="page">
         <div class="circle">
-
         </div>
         <br><br><br>
         <form action="index.php" method="post">
