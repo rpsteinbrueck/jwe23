@@ -1,7 +1,11 @@
 <?php
+namespace rpsteinbrueck\jwe23\animal;
+# ^ for above: namespace for the project, specifically for this class
+# namespaces are used to allow classes which are named the same in the same porject or different projects.
+#
 
 # abstract before class means this class cannot be used as a class to 
-#create an object as is and must be extended in a none abstract class.
+# create an object as is and must be extended in a none abstract class.
 abstract class animals_abstract {
 
     # visibility modifiers for properties
