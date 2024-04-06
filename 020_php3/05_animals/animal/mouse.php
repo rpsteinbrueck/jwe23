@@ -5,6 +5,11 @@ namespace rpsteinbrueck\jwe23\animal;
 # which are not declared private) from the given parent class
 class mouse extends animals_abstract {
 
+    public function get_name(): string {
+        $name = parent::get_name();
+        return $name . " (mouse)";
+    }
+
     public function peep(): string {
         return "peep peep";
     }

@@ -2,7 +2,7 @@
 namespace rpsteinbrueck\jwe23\animal;
 # ^ for above: namespace for the project, specifically for this class
 # namespaces are used to allow classes which are named the same in the same porject or different projects.
-#
+
 
 # abstract before class means this class cannot be used as a class to 
 # create an object as is and must be extended in a none abstract class.
@@ -12,14 +12,27 @@ abstract class animals_abstract {
     # public scope to make that property/method available from anywhere, other classes and instances of the object.
     # private scope when you want your property/method to be visible in its own class only.
     # protected scope when you want to make your property/method visible in all classes that extend current class including the parent class.
-    
+    # CODE:
     # protected string $name;
     private string $name;
+
+
+    # readonly properties can be set once and not ever changed afterwardss
+    # CODE:
+    # private readonly string $name;
 
     public function __construct(string $name) {
         $this->name = $name;
     }
 
+
+    # constructor promotion!
+    # CODE:
+    # public function __construct(private string $name) {};
+
+    # final should be used to not change methods in inhereted classes
+    # CODE:
+    # public final function get_name(): string {
     public function get_name(): string {
         return $this->name;
     }
