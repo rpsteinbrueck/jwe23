@@ -36,5 +36,4 @@ echo "<br>";
 echo $mouse->favourite_food();
 echo "<br>";
 
-
 ?>

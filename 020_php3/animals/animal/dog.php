@@ -1,5 +1,7 @@
 <?php
 
+# extends RANDOM_ABSTRACT_CLASS copies all properties and methods 
+# which are not declared private) from the given parent class
 class dog extends animals_abstract {
 
     public function bark(): string {
@@ -10,6 +12,5 @@ class dog extends animals_abstract {
         return "Bone";
     }
 }
-
 
 ?>
