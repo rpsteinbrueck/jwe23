@@ -2,3 +2,13 @@
 # create table users
 ####################################################################
 CREATE TABLE users (id int(10) UNSIGNED AUTO_INCREMENT, username varchar(255) NOT NULL, password varchar(255) NOT NULL, email varchar(255) NOT NULL, PRIMARY KEY (id));
+
+####################################################################
+# create table brands
+####################################################################
+CREATE TABLE brands (id int(10) UNSIGNED AUTO_INCREMENT, brandname varchar(255) NOT NULL, PRIMARY KEY (id));
+
+####################################################################
+# create table cars
+####################################################################
+CREATE TABLE cars (id int(10) UNSIGNED AUTO_INCREMENT, license_plate varchar(255) NOT NULL, brand_id int(10) UNSIGNED, model varchar(255) NOT NULL, year_model YEAR NOT NULL, color varchar(255) NOT NULL, PRIMARY KEY (id), FOREIGN KEY (brand_id) REFERENCES brands(id));
