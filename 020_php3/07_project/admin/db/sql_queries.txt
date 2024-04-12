@@ -12,3 +12,27 @@ CREATE TABLE brands (id int(10) UNSIGNED AUTO_INCREMENT, brandname varchar(255) 
 # create table cars
 ####################################################################
 CREATE TABLE cars (id int(10) UNSIGNED AUTO_INCREMENT, license_plate varchar(255) NOT NULL, brand_id int(10) UNSIGNED, model varchar(255) NOT NULL, year_model YEAR NOT NULL, color varchar(255) NOT NULL, PRIMARY KEY (id), FOREIGN KEY (brand_id) REFERENCES brands(id));
+
+
+
+
+############################################################################################################################
+
+
+
+
+####################################################################
+# Insert car brands
+####################################################################
+INSERT INTO `brands` (`brandname`) VALUES ('volkswagen');
+INSERT INTO `brands` (`brandname`) VALUES ('bmw');
+INSERT INTO `brands` (`brandname`) VALUES ('izuzu');
+INSERT INTO `brands` (`brandname`) VALUES ('toyota');
+INSERT INTO `brands` (`brandname`) VALUES ('volvo');
+INSERT INTO `brands` (`brandname`) VALUES ('ford');
+INSERT INTO `brands` (`brandname`) VALUES ('tesla');
+INSERT INTO `brands` (`brandname`) VALUES ('mercedes benz');
+INSERT INTO `brands` (`brandname`) VALUES ('renault');
+INSERT INTO `brands` (`brandname`) VALUES ('ferrari');
+INSERT INTO `brands` (`brandname`) VALUES ('mazda');
+INSERT INTO `brands` (`brandname`) VALUES ('audi');
