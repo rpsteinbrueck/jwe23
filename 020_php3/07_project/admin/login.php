@@ -14,6 +14,24 @@
         if ($validate->no_errors()) {
             $conn = new mysql();
             $sql_username = $conn->escape($_POST["username"]);
+            $result = $conn->query("SELECT * FROM users WHERE username = '{$sql_username}'");
+            $user = $result->fetch_assoc();
+            # Debug
+            # echo "<pre>"; print_r($user);echo "</pre>";
+
+            if (empty($user) ||!password_verify($_POST["password"], $user["password"])) {
+                # error user does not exist
+                $validate->add_error("User or password was wrong!");
+            } else {
+                # login
+                $_SESSION["logged_in"] = true;
+                $_SESSION["username"] = $user["username"];
+                $_SESSION["user_id"] = $user["id"];
+
+                # redirect to home page
+                header("Location: index.php");
+                exit;
+            }
         }
 
     }
@@ -62,7 +80,6 @@
     </style>
 </head>
 <body>
-    <h1 class="center_me">Vehicle DB</h1>
     <div class="login_form">
         <h1>Login</h1>
         <?php

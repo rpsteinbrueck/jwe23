@@ -14,8 +14,15 @@ class mysql {
         $this->conn->set_charset('utf8mb4');
     }
 
-    public function escape ($input) {
+    public function escape (string $input) {
         return $this->conn->real_escape_string($input);
+    }
+
+    public function query(string $input): \mysqli_result|bool {
+        $result =  $this->conn->query($input);
+        # Debug
+        # echo "<pre"; print_r($result);
+        return $result;
     }
 }
 

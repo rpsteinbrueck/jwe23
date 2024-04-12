@@ -29,7 +29,11 @@ class validate {
     }
 
     public function no_errors(): bool {
-        return !empty($this->errors);
+        return empty($this->errors);
+    }
+
+    public function add_error(string $error): void {
+        array_push($this->errors, $error);
     }
 
 }
