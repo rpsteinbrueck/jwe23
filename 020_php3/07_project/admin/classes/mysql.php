@@ -3,9 +3,22 @@
 namespace rpsteinbrueck\jwe23\classes;
 
 class mysql {
+
+    # singleton implementation start
+    private static ?mysql $instance = null;
+
+    public static function get_instance(): mysql {
+        if(!self::$instance) {
+            self::$instance = new mysql();
+        }
+        return self::$instance;
+    }
+    # singleton implementation end
+
+
     private \mysqli $conn;
 
-    public function __construct() {
+    private function __construct() {
         $this->connect();
     }
     

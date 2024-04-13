@@ -21,13 +21,14 @@ use rpsteinbrueck\jwe23\classes\model\vehicles;
 
     foreach ($all_vehicles as $vehicle){
         echo "<div class='row text-center'>";
-        echo "<div class='col-1'>" . $vehicle["license_plate"] . "</div>";
-        echo "<div class='col-2'>" . $vehicle["brand_id"]  . "</div>";
-        echo "<div class='col-2'>" . $vehicle["model"]  . "</div>";
-        echo "<div class='col-2'>" . $vehicle["year_model"]  . "</div>";
-        echo "<div class='col-2'>" . $vehicle["color"]  . "</div>";
-        echo '<div class="col-1"><a  href="?site=vehicle_edit&id=' . $vehicle["id"] . '"><img src="static/img/pencil.svg"></a></div>';
-        echo '<div class="col-1"><a  href="?site=vehicle_remove&id=' . $vehicle["id"] . '"><img src="static/img/trash.svg"></a></div>';
+        echo "<div class='col-1'>" . $vehicle->license_plate . "</div>";
+        echo "<div class='col-2'>" . $vehicle->brand_id  . "</div>";
+        #echo "<div class='col-2'>" . $vehicle->get_brand()->brandname  . "</div>";
+        echo "<div class='col-2'>" . $vehicle->model  . "</div>";
+        echo "<div class='col-2'>" . $vehicle->year_model  . "</div>";
+        echo "<div class='col-2'>" . $vehicle->color  . "</div>";
+        echo '<div class="col-1"><a  href="?site=vehicle_edit&id=' . $vehicle->id . '"><img src="static/img/pencil.svg"></a></div>';
+        echo '<div class="col-1"><a  href="?site=vehicle_remove&id=' . $vehicle->id . '"><img src="static/img/trash.svg"></a></div>';
         echo "</div>";
     }
 ?>

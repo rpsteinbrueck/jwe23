@@ -38,7 +38,7 @@
         }
 
         .option1 {
-            width: 300px;
+            width: 200px;
         }
 
         h1 {
@@ -71,7 +71,7 @@
 
         .center_button {
             width: 200px;
-            
+
             display: flex;
             justify-content: center;
             align-items: center;"
@@ -88,8 +88,6 @@
     <nav class="navbar navbar-light" style="background-color: #010d2e;">
         <div class="options option1">
             <a href="?site=home">Home</a>
-        </div>
-        <div class="options option1">
             <a href="?site=vehicle_list">Vehicle List</a>
         </div>
         <div class="options option2">

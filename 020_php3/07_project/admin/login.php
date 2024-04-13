@@ -12,7 +12,8 @@
         $validate->check_if_set($_POST["password"], "password");
 
         if ($validate->no_errors()) {
-            $conn = new mysql();
+            #$conn = new mysql();
+            $conn = mysql::get_instance();
             $sql_username = $conn->escape($_POST["username"]);
             $result = $conn->query("SELECT * FROM users WHERE username = '{$sql_username}'");
             $user = $result->fetch_assoc();
