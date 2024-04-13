@@ -1,8 +1,8 @@
 <?php
     include "setup.php";
 
-    use rpsteinbrueck\jwe23\models\validate;
-    use rpsteinbrueck\jwe23\models\mysql;
+    use rpsteinbrueck\jwe23\classes\validate;
+    use rpsteinbrueck\jwe23\classes\mysql;
 
     if (!empty($_POST)){
 

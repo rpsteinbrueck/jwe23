@@ -13,7 +13,12 @@
             color: white;
         }
 
-        main {
+        .page_normal {
+            display: flex;
+            flex-flow: column;
+        }
+
+        .page_center {
             padding: 50px;
             display: flex;
             flex-flow: column;
@@ -64,6 +69,14 @@
             align-items: center;"
         }
 
+        .center_button {
+            width: 200px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;"
+        }
+
         /*@media (min-width: 1800px) {
             body {
                 padding: 100px;
@@ -75,6 +88,9 @@
     <nav class="navbar navbar-light" style="background-color: #010d2e;">
         <div class="options option1">
             <a href="?site=home">Home</a>
+        </div>
+        <div class="options option1">
+            <a href="?site=vehicle_list">Vehicle List</a>
         </div>
         <div class="options option2">
             <a href="#">logged in as: <?php echo $_SESSION["username"]; ?></a>

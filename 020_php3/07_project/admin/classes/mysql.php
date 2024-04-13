@@ -1,6 +1,6 @@
 <?php
 
-namespace rpsteinbrueck\jwe23\models;
+namespace rpsteinbrueck\jwe23\classes;
 
 class mysql {
     private \mysqli $conn;
