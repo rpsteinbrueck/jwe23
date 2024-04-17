@@ -1,6 +1,7 @@
 <?php
 include "circle_class.php";
 
+
 $errors =  array();
 $error = "";
 $warnings = array();
@@ -12,18 +13,19 @@ if (!empty($_POST)) {
         $success = "Circle was calculated!";
     } catch(Exception $ex) {
         $error = "Check the input!" . $ex->getMessage();
-    } finally {
-        echo "Here is the finally<br>";
-    }
+    } 
+    #finally {
+    #    echo "Here is the finally<br>";
+    #}
 
     if (!$error && !$errors) {
-        echo "radius of the circle is " . $circle->get_radius() ;
+        echo "radius of the circle is " . $circle->get_radius() . " cm";
         echo "<br>";
-        echo "area of the circle is " . $circle->area() ;
+        echo "area of the circle is " . $circle->area() . " cm2";
         echo "<br>";
-        echo "circumference of the circle is " . $circle->circumference() ;
+        echo "circumference of the circle is " . $circle->circumference() . " cm";
         echo "<br>";
-        echo "diameter of the circle is " . $circle->diameter() ;
+        echo "diameter of the circle is " . $circle->diameter() . " cm";
     }
 } else {
     $circle = new circle(3);
@@ -66,8 +68,8 @@ if (!empty($success)) {
         .circle {
             background-color: #DAF7A6;
             border-radius: 100%;
-            width: <?php echo $circle->get_radius() . "cm"; ?>;
-            height: <?php echo $circle->get_radius() . "cm"; ?>;
+            width: <?php echo $circle->get_radius()*2 . "cm"; ?>;
+            height: <?php echo $circle->get_radius()*2 . "cm"; ?>;
 
             display: flex;
             flex-flow: column;

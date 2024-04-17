@@ -1,30 +1,5 @@
 <?php
 
-##########################################################
-# configuration for this project
-#########################################################
-const MYSQL_HOST = "db";
-const MYSQL_USER = "root";
-const MYSQL_PASSWORD = "abc123";
-const MYSQL_DATABASE = "php3";
-
-
-
-
-##########################################################
-# setup code, change if you know what you are doing
-#########################################################
-
-# required for $_SESSION
-session_start();
-
-function is_logged_in() {
-    if (empty($_SESSION["logged_in"])) {
-        header("Location: login.php");
-        exit;
-    }
-}
-
 spl_autoload_register(
     function (string $class) {
         $prefix = "rpsteinbrueck\\jwe23\\";
@@ -45,5 +20,3 @@ spl_autoload_register(
         }
     }
 );
-
-?>
