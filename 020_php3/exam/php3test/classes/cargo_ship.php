@@ -19,7 +19,7 @@ class cargo_ship implements \Iterator {
     # properties
     #########################
     private array $containers = array();
-    static private int $amount_of_container = 0;
+    private int $amount_of_container = 0;
     private float $cruising_speed;
 
     #########################
@@ -39,9 +39,9 @@ class cargo_ship implements \Iterator {
     public function add_container(container_big|container_small $container): void {
         array_push($this->containers, $container);
         if ($container::class == "rpsteinbrueck\php3test\classes\container_big") {
-            self::$amount_of_container+=2;
+            $this->amount_of_container+=2;
         } else {
-            self::$amount_of_container++;
+            $this->amount_of_container++;
         }
     }
 
@@ -54,7 +54,7 @@ class cargo_ship implements \Iterator {
     }
 
     public function amount_of_containers(): int {
-        return self::$amount_of_container;
+        return $this->amount_of_container;
     }
 
     #########################
